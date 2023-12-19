@@ -1,0 +1,24 @@
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+Z:/personal/riscv-softcore/OtterPipelineFiles/OTTER_Wrapper_v1_08.sv,1702983628,systemVerilog,,Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/Pipeline_reg_decode_execute.sv,,OTTER_Wrapper,,uvm,,,,,,
+Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/Branch_cond_gen.sv,1700119210,systemVerilog,,Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/Decoder.sv,,branch_cond_gen,,uvm,,,,,,
+Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/Decoder.sv,1701776186,systemVerilog,,Z:/personal/riscv-softcore/OtterPipelineFiles/OTTER_Wrapper_v1_08.sv,,Decoder,,uvm,,,,,,
+Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/Pipeline_reg_decode_execute.sv,1701775100,systemVerilog,,Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/Pipeline_reg_execute_memory.sv,,Pipeline_reg_decode_execute,,uvm,,,,,,
+Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/Pipeline_reg_execute_memory.sv,1700124292,systemVerilog,,Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/Pipeline_reg_memory_writeback.sv,,Pipeline_reg_execute_memory,,uvm,,,,,,
+Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/Pipeline_reg_memory_writeback.sv,1700119188,systemVerilog,,Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/alu.sv,,Pipeline_reg_memory_writeback,,uvm,,,,,,
+Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/alu.sv,1702427650,systemVerilog,,Z:/personal/riscv-softcore/OtterPipelineFiles/wrapper/core_fsm.sv,,ALU,,uvm,,,,,,
+Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/hazard.sv,1700119210,systemVerilog,,Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/immed_gen.sv,,Hazard_Unit,,uvm,,,,,,
+Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/immed_gen.sv,1701034066,systemVerilog,,Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/mux_2t1_nb.sv,,immed_gen,,uvm,,,,,,
+Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/mux_2t1_nb.sv,1700119188,systemVerilog,,Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/mux_4t1_nb.sv,,mux_2t1_nb,,uvm,,,,,,
+Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/mux_4t1_nb.sv,1700119188,systemVerilog,,Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/otter_mcu_pipeline.sv,,mux_4t1_nb,,uvm,,,,,,
+Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/otter_mcu_pipeline.sv,1702980536,systemVerilog,,Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/otter_memory.sv,,OTTER_MCU,,uvm,,,,,,
+Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/otter_memory.sv,1700998724,systemVerilog,,Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/pipeline_reg_fetch_decode.sv,,Memory,,uvm,,,,,,
+Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/pipeline_reg_fetch_decode.sv,1700119210,systemVerilog,,Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/reg_file.sv,,Pipeline_reg_fetch_decode,,uvm,,,,,,
+Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/reg_file.sv,1700119188,systemVerilog,,Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/register_nb.sv,,RegFile,,uvm,,,,,,
+Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/register_nb.sv,1700119210,systemVerilog,,Z:/personal/riscv-softcore/OtterPipelineFiles/test_pipeline.sv,,reg_nb,,uvm,,,,,,
+Z:/personal/riscv-softcore/OtterPipelineFiles/test_pipeline.sv,1702980724,systemVerilog,,,,test_pipeline,,uvm,,,,,,
+Z:/personal/riscv-softcore/OtterPipelineFiles/wrapper/core_fsm.sv,1702980428,systemVerilog,,Z:/personal/riscv-softcore/OtterPipelineFiles/otter_mcu/hazard.sv,,CPU_FSM,,uvm,,,,,,
+Z:/personal/riscv-softcore/OtterPipelineFiles/wrapper/timer_counter_v1_02.sv,1694049054,systemVerilog,,Z:/personal/riscv-softcore/OtterPipelineFiles/test_pipeline.sv,,timer_counter,,uvm,,,,,,
+Z:/personal/riscv-softcore/vivado/vivado.sim/sim_1/behav/xsim/glbl.v,1665704904,verilog,,,,glbl,,uvm,,,,,,

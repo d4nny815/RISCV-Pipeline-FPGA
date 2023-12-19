@@ -1,0 +1,73 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Tue Dec 19 02:13:22 2023
+# Process ID: 33120
+# Current directory: Z:/personal/riscv-softcore/vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent45528 Z:\personal\riscv-softcore\vivado\vivado.xpr
+# Log file: Z:/personal/riscv-softcore/vivado/vivado.log
+# Journal file: Z:/personal/riscv-softcore/vivado\vivado.jou
+# Running On: RaijinPC, OS: Windows, CPU Frequency: 4200 MHz, CPU Physical cores: 32, Host memory: 33457 MB
+#-----------------------------------------------------------
+start_gui
+open_project Z:/personal/riscv-softcore/vivado/vivado.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_simulation
+open_wave_config Z:/personal/riscv-softcore/vivado/test_pipeline_behav.wcfg
+source test_pipeline.tcl
+run 10 us
+close_sim
+export_ip_user_files -of_objects  [get_files Z:/personal/riscv-softcore/OtterPipelineFiles/wrapper/timer_counter_v1_02.sv] -no_script -reset -force -quiet
+remove_files  Z:/personal/riscv-softcore/OtterPipelineFiles/wrapper/timer_counter_v1_02.sv
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_simulation
+open_wave_config Z:/personal/riscv-softcore/vivado/test_pipeline_behav.wcfg
+source test_pipeline.tcl
+run 10 ms
+run 100 ms
+close_sim
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+open_run impl_1
+close_design
+close_hw_manager
+launch_simulation
+open_wave_config Z:/personal/riscv-softcore/vivado/test_pipeline_behav.wcfg
+source test_pipeline.tcl
+run 100 us
+run 100 us
+close_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_simulation
+open_wave_config Z:/personal/riscv-softcore/vivado/test_pipeline_behav.wcfg
+source test_pipeline.tcl
+run 100 us
+run 100 us
+run 100 us
+close_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_simulation
+open_wave_config Z:/personal/riscv-softcore/vivado/test_pipeline_behav.wcfg
+source test_pipeline.tcl
+run 100 us
+run 100 us
+close_sim
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
