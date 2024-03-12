@@ -41,7 +41,7 @@ module OTTER_MCU (
     logic [DATAWIDTH - 1:0] rf_write_data;
 
     // HAZARD SIGNALS
-    logic stall_F, stall_D, flush_E, flush_D;
+    logic stall_F, stall_D, flush_F, flush_E, flush_D, flush_M, flush_W;
     logic [1:0] forwardA_E, forwardB_E;
 
 // ************************************************************************************************
@@ -61,7 +61,7 @@ module OTTER_MCU (
         .clk            (CLK), 
         .data_in        (PC_in), 
         .ld             (stall_F), 
-        .clr            (RESET), 
+        .clr            (flush_F), 
         .data_out       (PC)
     );
 
@@ -244,16 +244,30 @@ module OTTER_MCU (
 
     // PIPELINE REG EX_MEM
     always_ff @(posedge CLK) begin
-        EX_MEM.PC <= DE_EX.PC;
-        EX_MEM.ALU_result <= alu_result;
-        EX_MEM.write_data <= ALU_forward_muxB;
-        EX_MEM.rf_sel <= DE_EX.rf_sel;
-        EX_MEM.rd_addr <= DE_EX.rd_addr;
-        EX_MEM.regWrite <= DE_EX.regWrite;
-        EX_MEM.memWrite <= DE_EX.memWrite;
-        EX_MEM.memRead <= DE_EX.memRead;
-        EX_MEM.memRead_size <= DE_EX.IR[13:12];
-        EX_MEM.memRead_sign <= DE_EX.IR[14];
+        if (flush_M == 1'b1) begin
+            EX_MEM.PC           <= 0;
+            EX_MEM.ALU_result   <= 0;
+            EX_MEM.write_data   <= 0;
+            EX_MEM.rf_sel       <= 0;
+            EX_MEM.rd_addr      <= 0;
+            EX_MEM.regWrite     <= 0;
+            EX_MEM.memWrite     <= 0;
+            EX_MEM.memRead      <= 0;
+            EX_MEM.memRead_size <= 0;
+            EX_MEM.memRead_sign <= 0;
+        end
+        else begin
+            EX_MEM.PC           <= DE_EX.PC;
+            EX_MEM.ALU_result   <= alu_result;
+            EX_MEM.write_data   <= ALU_forward_muxB;
+            EX_MEM.rf_sel       <= DE_EX.rf_sel;
+            EX_MEM.rd_addr      <= DE_EX.rd_addr;
+            EX_MEM.regWrite     <= DE_EX.regWrite;
+            EX_MEM.memWrite     <= DE_EX.memWrite;
+            EX_MEM.memRead      <= DE_EX.memRead;
+            EX_MEM.memRead_size <= DE_EX.IR[13:12];
+            EX_MEM.memRead_sign <= DE_EX.IR[14];
+        end
     end
     
     assign IOBUS_OUT = EX_MEM.write_data;
@@ -265,12 +279,22 @@ module OTTER_MCU (
 
     // PIPELINE REG MEM_WB
     always_ff @(posedge CLK) begin
-        MEM_WB.PC_plus4 <= EX_MEM.PC + 4;
-        MEM_WB.ALU_result <= EX_MEM.ALU_result;
-        MEM_WB.memRead_data <= memRead_data;
-        MEM_WB.rd_addr <= EX_MEM.rd_addr;
-        MEM_WB.rf_sel <= EX_MEM.rf_sel;
-        MEM_WB.regWrite <= EX_MEM.regWrite;
+        if (flush_W == 1'b1) begin
+            MEM_WB.PC_plus4     <= 0;
+            MEM_WB.ALU_result   <= 0;
+            MEM_WB.memRead_data <= 0;
+            MEM_WB.rd_addr      <= 0;
+            MEM_WB.rf_sel       <= 0;
+            MEM_WB.regWrite     <= 0;
+        end
+        else begin
+            MEM_WB.PC_plus4     <= EX_MEM.PC + 4;
+            MEM_WB.ALU_result   <= EX_MEM.ALU_result;
+            MEM_WB.memRead_data <= memRead_data;
+            MEM_WB.rd_addr      <= EX_MEM.rd_addr;
+            MEM_WB.rf_sel       <= EX_MEM.rf_sel;
+            MEM_WB.regWrite     <= EX_MEM.regWrite;
+        end
     end
 
     always_comb begin
@@ -286,6 +310,7 @@ module OTTER_MCU (
 // * HAZARD UNUT
 // ************************************************************************************************
     HazardUnit HAZARD_UNIT (
+        .reset          (RESET),
         .rs1_D          (IF_DE.rs1_addr),
         .rs2_D          (IF_DE.rs2_addr),
         .rs1_E          (DE_EX.rs1_addr),
@@ -300,8 +325,11 @@ module OTTER_MCU (
         .forwardB_E     (forwardB_E),
         .stall_F        (stall_F),
         .stall_D        (stall_D),
+        .flush_F        (flush_F),
         .flush_D        (flush_D),
         .flush_E        (flush_E),
+        .flush_M        (flush_M),
+        .flush_W        (flush_W),
         .pcSource_E     (pc_sel)
     );
 

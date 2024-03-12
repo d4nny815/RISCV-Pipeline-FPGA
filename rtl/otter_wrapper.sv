@@ -42,7 +42,7 @@
     //- Instantiate RISC-V OTTER MCU 
     OTTER_MCU my_otter(
         .CLK        (CLK_50MHz),
-        .INTR       (0),
+        .INTR       (1'b0),
         .RESET      (s_reset | reset),  
         .IOBUS_IN   (IOBUS_in),  
         .IOBUS_OUT  (IOBUS_out),  
@@ -84,13 +84,12 @@
 
     
     typedef enum logic {
-        INIT = 1'b0,
-        RUNNING = 1'b1
-        
+        INIT,
+        RUNNING 
     } state_t;
 
     state_t PS, NS;
-    always_ff @(posedge clk) begin
+    always_ff @(posedge CLK_50MHz) begin
         PS <= NS;
     end
 
@@ -101,14 +100,13 @@
                 reset = 1'b1; 
                 NS = RUNNING;
             end
+
             RUNNING: begin
                 reset = 1'b0;
                 NS = RUNNING;
             end
         default: NS = INIT;
-        
         endcase
-        
     end
 
 endmodule

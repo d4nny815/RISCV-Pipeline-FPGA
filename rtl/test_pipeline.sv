@@ -59,7 +59,7 @@ module test_pipeline();
         // rst = 1'b1;
         // #6;
         // rst = 1'b0;
-        #600;
+        #1000;
         $finish;
     end
 
