@@ -5,13 +5,11 @@ Running: /tools/Xilinx/Vivado/2023.2/bin/unwrapped/lnx64.o/xelab --incr --debug 
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-9543] actual bit length 32 differs from formal bit length 1 for port 'INTR' [/home/danny/Documents/HDL/riscv_pipeline_mcu/rtl/otter_wrapper.sv:45]
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [/home/danny/Documents/HDL/riscv_pipeline_mcu/rtl/control_unit.sv:30]
-WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [/home/danny/Documents/HDL/riscv_pipeline_mcu/rtl/control_unit.sv:44]
-WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [/home/danny/Documents/HDL/riscv_pipeline_mcu/rtl/Branch_cond_gen.sv:46]
-WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [/home/danny/Documents/HDL/riscv_pipeline_mcu/rtl/alu.sv:44]
+WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [/home/danny/Documents/HDL/pipeline_riscv/rtl/control_unit.sv:30]
+WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [/home/danny/Documents/HDL/pipeline_riscv/rtl/Branch_cond_gen.sv:46]
+WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [/home/danny/Documents/HDL/pipeline_riscv/rtl/alu.sv:44]
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling package xil_defaultlib.structs

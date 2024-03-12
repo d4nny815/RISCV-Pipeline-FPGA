@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
-| Date         : Tue Mar 12 10:46:33 2024
+| Date         : Tue Mar 12 11:57:19 2024
 | Host         : framework13 running 64-bit Ubuntu 22.04.4 LTS
 | Command      : report_timing_summary -max_paths 10 -report_unconstrained -file OTTER_Wrapper_timing_summary_routed.rpt -pb OTTER_Wrapper_timing_summary_routed.pb -rpx OTTER_Wrapper_timing_summary_routed.rpx -warn_on_violation
 | Design       : OTTER_Wrapper
@@ -56,7 +56,7 @@ Table of Contents
 1. checking no_clock (531)
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
-4. checking unconstrained_internal_endpoints (1915)
+4. checking unconstrained_internal_endpoints (2112)
 5. checking no_input_delay (21)
 6. checking no_output_delay (28)
 7. checking multiple_clock (0)
@@ -81,9 +81,9 @@ Table of Contents
  There are 0 register/latch pins which need pulse_width check
 
 
-4. checking unconstrained_internal_endpoints (1915)
+4. checking unconstrained_internal_endpoints (2112)
 ---------------------------------------------------
- There are 1915 pins that are not constrained for maximum delay. (HIGH)
+ There are 2112 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
@@ -367,499 +367,411 @@ Path Group:  (none)
 From Clock:  
   To Clock:  
 
-Max Delay          1943 Endpoints
-Min Delay          1943 Endpoints
+Max Delay          2140 Endpoints
+Min Delay          2140 Endpoints
 --------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 my_otter/OTTER_REG_FILE/reg_file_reg_2/CLKARDCLK
-                            (rising edge-triggered cell RAMB18E1)
-  Destination:            my_otter/PROGRAM_COUNTER/data_out_reg[30]/D
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        15.788ns  (logic 4.951ns (31.360%)  route 10.837ns (68.640%))
-  Logic Levels:           15  (CARRY4=8 LUT2=1 LUT6=5 RAMB18E1=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    RAMB18_X2Y5          RAMB18E1                     0.000     0.000 r  my_otter/OTTER_REG_FILE/reg_file_reg_2/CLKARDCLK
-    RAMB18_X2Y5          RAMB18E1 (Prop_ramb18e1_CLKARDCLK_DOADO[1])
-                                                      2.454     2.454 f  my_otter/OTTER_REG_FILE/reg_file_reg_2/DOADO[1]
-                         net (fo=2, routed)           1.881     4.335    my_otter/OTTER_REG_FILE/DE_EX_reg[rs2_data][1]
-    SLICE_X46Y13         LUT6 (Prop_lut6_I4_O)        0.124     4.459 f  my_otter/OTTER_REG_FILE/result0_carry_i_13/O
-                         net (fo=99, routed)          3.886     8.345    my_otter/OTTER_REG_FILE/DE_EX_reg[imm][27][0]
-    SLICE_X45Y29         LUT2 (Prop_lut2_I0_O)        0.150     8.495 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][31]_i_16/O
-                         net (fo=6, routed)           1.655    10.151    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][31]_i_16_n_0
-    SLICE_X55Y19         LUT6 (Prop_lut6_I1_O)        0.326    10.477 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_8/O
-                         net (fo=1, routed)           0.973    11.450    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_8_n_0
-    SLICE_X56Y19         LUT6 (Prop_lut6_I0_O)        0.124    11.574 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_4/O
-                         net (fo=1, routed)           0.607    12.181    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_4_n_0
-    SLICE_X56Y20         LUT6 (Prop_lut6_I2_O)        0.124    12.305 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_2/O
-                         net (fo=3, routed)           1.305    13.610    my_otter/OTTER_REG_FILE/internal_alu[2]
-    SLICE_X41Y19         LUT6 (Prop_lut6_I3_O)        0.124    13.734 r  my_otter/OTTER_REG_FILE/data_out[1]_i_2/O
-                         net (fo=1, routed)           0.519    14.254    my_otter/OTTER_REG_FILE/data_out[1]_i_2_n_0
-    SLICE_X40Y19         CARRY4 (Prop_carry4_DI[1]_CO[3])
-                                                      0.507    14.761 r  my_otter/OTTER_REG_FILE/data_out_reg[1]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.761    my_otter/OTTER_REG_FILE/data_out_reg[1]_i_1_n_0
-    SLICE_X40Y20         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    14.875 r  my_otter/OTTER_REG_FILE/data_out_reg[5]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.875    my_otter/OTTER_REG_FILE/data_out_reg[5]_i_1_n_0
-    SLICE_X40Y21         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    14.989 r  my_otter/OTTER_REG_FILE/data_out_reg[9]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.989    my_otter/OTTER_REG_FILE/data_out_reg[9]_i_1_n_0
-    SLICE_X40Y22         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.103 r  my_otter/OTTER_REG_FILE/data_out_reg[13]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.103    my_otter/OTTER_REG_FILE/data_out_reg[13]_i_1_n_0
-    SLICE_X40Y23         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.217 r  my_otter/OTTER_REG_FILE/data_out_reg[17]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.217    my_otter/OTTER_REG_FILE/data_out_reg[17]_i_1_n_0
-    SLICE_X40Y24         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.331 r  my_otter/OTTER_REG_FILE/data_out_reg[21]_i_1/CO[3]
-                         net (fo=1, routed)           0.009    15.340    my_otter/OTTER_REG_FILE/data_out_reg[21]_i_1_n_0
-    SLICE_X40Y25         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.454 r  my_otter/OTTER_REG_FILE/data_out_reg[25]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.454    my_otter/OTTER_REG_FILE/data_out_reg[25]_i_1_n_0
-    SLICE_X40Y26         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334    15.788 r  my_otter/OTTER_REG_FILE/data_out_reg[29]_i_1/O[1]
-                         net (fo=1, routed)           0.000    15.788    my_otter/PROGRAM_COUNTER/data_out_reg[31]_0[1]
-    SLICE_X40Y26         FDCE                                         r  my_otter/PROGRAM_COUNTER/data_out_reg[30]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 my_otter/OTTER_REG_FILE/reg_file_reg_2/CLKARDCLK
-                            (rising edge-triggered cell RAMB18E1)
-  Destination:            my_otter/PROGRAM_COUNTER/data_out_reg[31]/D
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        15.693ns  (logic 4.856ns (30.945%)  route 10.837ns (69.055%))
-  Logic Levels:           15  (CARRY4=8 LUT2=1 LUT6=5 RAMB18E1=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    RAMB18_X2Y5          RAMB18E1                     0.000     0.000 r  my_otter/OTTER_REG_FILE/reg_file_reg_2/CLKARDCLK
-    RAMB18_X2Y5          RAMB18E1 (Prop_ramb18e1_CLKARDCLK_DOADO[1])
-                                                      2.454     2.454 f  my_otter/OTTER_REG_FILE/reg_file_reg_2/DOADO[1]
-                         net (fo=2, routed)           1.881     4.335    my_otter/OTTER_REG_FILE/DE_EX_reg[rs2_data][1]
-    SLICE_X46Y13         LUT6 (Prop_lut6_I4_O)        0.124     4.459 f  my_otter/OTTER_REG_FILE/result0_carry_i_13/O
-                         net (fo=99, routed)          3.886     8.345    my_otter/OTTER_REG_FILE/DE_EX_reg[imm][27][0]
-    SLICE_X45Y29         LUT2 (Prop_lut2_I0_O)        0.150     8.495 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][31]_i_16/O
-                         net (fo=6, routed)           1.655    10.151    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][31]_i_16_n_0
-    SLICE_X55Y19         LUT6 (Prop_lut6_I1_O)        0.326    10.477 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_8/O
-                         net (fo=1, routed)           0.973    11.450    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_8_n_0
-    SLICE_X56Y19         LUT6 (Prop_lut6_I0_O)        0.124    11.574 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_4/O
-                         net (fo=1, routed)           0.607    12.181    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_4_n_0
-    SLICE_X56Y20         LUT6 (Prop_lut6_I2_O)        0.124    12.305 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_2/O
-                         net (fo=3, routed)           1.305    13.610    my_otter/OTTER_REG_FILE/internal_alu[2]
-    SLICE_X41Y19         LUT6 (Prop_lut6_I3_O)        0.124    13.734 r  my_otter/OTTER_REG_FILE/data_out[1]_i_2/O
-                         net (fo=1, routed)           0.519    14.254    my_otter/OTTER_REG_FILE/data_out[1]_i_2_n_0
-    SLICE_X40Y19         CARRY4 (Prop_carry4_DI[1]_CO[3])
-                                                      0.507    14.761 r  my_otter/OTTER_REG_FILE/data_out_reg[1]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.761    my_otter/OTTER_REG_FILE/data_out_reg[1]_i_1_n_0
-    SLICE_X40Y20         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    14.875 r  my_otter/OTTER_REG_FILE/data_out_reg[5]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.875    my_otter/OTTER_REG_FILE/data_out_reg[5]_i_1_n_0
-    SLICE_X40Y21         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    14.989 r  my_otter/OTTER_REG_FILE/data_out_reg[9]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.989    my_otter/OTTER_REG_FILE/data_out_reg[9]_i_1_n_0
-    SLICE_X40Y22         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.103 r  my_otter/OTTER_REG_FILE/data_out_reg[13]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.103    my_otter/OTTER_REG_FILE/data_out_reg[13]_i_1_n_0
-    SLICE_X40Y23         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.217 r  my_otter/OTTER_REG_FILE/data_out_reg[17]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.217    my_otter/OTTER_REG_FILE/data_out_reg[17]_i_1_n_0
-    SLICE_X40Y24         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.331 r  my_otter/OTTER_REG_FILE/data_out_reg[21]_i_1/CO[3]
-                         net (fo=1, routed)           0.009    15.340    my_otter/OTTER_REG_FILE/data_out_reg[21]_i_1_n_0
-    SLICE_X40Y25         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.454 r  my_otter/OTTER_REG_FILE/data_out_reg[25]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.454    my_otter/OTTER_REG_FILE/data_out_reg[25]_i_1_n_0
-    SLICE_X40Y26         CARRY4 (Prop_carry4_CI_O[2])
-                                                      0.239    15.693 r  my_otter/OTTER_REG_FILE/data_out_reg[29]_i_1/O[2]
-                         net (fo=1, routed)           0.000    15.693    my_otter/PROGRAM_COUNTER/data_out_reg[31]_0[2]
-    SLICE_X40Y26         FDCE                                         r  my_otter/PROGRAM_COUNTER/data_out_reg[31]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 my_otter/OTTER_REG_FILE/reg_file_reg_2/CLKARDCLK
-                            (rising edge-triggered cell RAMB18E1)
-  Destination:            my_otter/PROGRAM_COUNTER/data_out_reg[29]/D
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        15.677ns  (logic 4.840ns (30.874%)  route 10.837ns (69.126%))
-  Logic Levels:           15  (CARRY4=8 LUT2=1 LUT6=5 RAMB18E1=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    RAMB18_X2Y5          RAMB18E1                     0.000     0.000 r  my_otter/OTTER_REG_FILE/reg_file_reg_2/CLKARDCLK
-    RAMB18_X2Y5          RAMB18E1 (Prop_ramb18e1_CLKARDCLK_DOADO[1])
-                                                      2.454     2.454 f  my_otter/OTTER_REG_FILE/reg_file_reg_2/DOADO[1]
-                         net (fo=2, routed)           1.881     4.335    my_otter/OTTER_REG_FILE/DE_EX_reg[rs2_data][1]
-    SLICE_X46Y13         LUT6 (Prop_lut6_I4_O)        0.124     4.459 f  my_otter/OTTER_REG_FILE/result0_carry_i_13/O
-                         net (fo=99, routed)          3.886     8.345    my_otter/OTTER_REG_FILE/DE_EX_reg[imm][27][0]
-    SLICE_X45Y29         LUT2 (Prop_lut2_I0_O)        0.150     8.495 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][31]_i_16/O
-                         net (fo=6, routed)           1.655    10.151    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][31]_i_16_n_0
-    SLICE_X55Y19         LUT6 (Prop_lut6_I1_O)        0.326    10.477 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_8/O
-                         net (fo=1, routed)           0.973    11.450    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_8_n_0
-    SLICE_X56Y19         LUT6 (Prop_lut6_I0_O)        0.124    11.574 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_4/O
-                         net (fo=1, routed)           0.607    12.181    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_4_n_0
-    SLICE_X56Y20         LUT6 (Prop_lut6_I2_O)        0.124    12.305 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_2/O
-                         net (fo=3, routed)           1.305    13.610    my_otter/OTTER_REG_FILE/internal_alu[2]
-    SLICE_X41Y19         LUT6 (Prop_lut6_I3_O)        0.124    13.734 r  my_otter/OTTER_REG_FILE/data_out[1]_i_2/O
-                         net (fo=1, routed)           0.519    14.254    my_otter/OTTER_REG_FILE/data_out[1]_i_2_n_0
-    SLICE_X40Y19         CARRY4 (Prop_carry4_DI[1]_CO[3])
-                                                      0.507    14.761 r  my_otter/OTTER_REG_FILE/data_out_reg[1]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.761    my_otter/OTTER_REG_FILE/data_out_reg[1]_i_1_n_0
-    SLICE_X40Y20         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    14.875 r  my_otter/OTTER_REG_FILE/data_out_reg[5]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.875    my_otter/OTTER_REG_FILE/data_out_reg[5]_i_1_n_0
-    SLICE_X40Y21         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    14.989 r  my_otter/OTTER_REG_FILE/data_out_reg[9]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.989    my_otter/OTTER_REG_FILE/data_out_reg[9]_i_1_n_0
-    SLICE_X40Y22         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.103 r  my_otter/OTTER_REG_FILE/data_out_reg[13]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.103    my_otter/OTTER_REG_FILE/data_out_reg[13]_i_1_n_0
-    SLICE_X40Y23         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.217 r  my_otter/OTTER_REG_FILE/data_out_reg[17]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.217    my_otter/OTTER_REG_FILE/data_out_reg[17]_i_1_n_0
-    SLICE_X40Y24         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.331 r  my_otter/OTTER_REG_FILE/data_out_reg[21]_i_1/CO[3]
-                         net (fo=1, routed)           0.009    15.340    my_otter/OTTER_REG_FILE/data_out_reg[21]_i_1_n_0
-    SLICE_X40Y25         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.454 r  my_otter/OTTER_REG_FILE/data_out_reg[25]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.454    my_otter/OTTER_REG_FILE/data_out_reg[25]_i_1_n_0
-    SLICE_X40Y26         CARRY4 (Prop_carry4_CI_O[0])
-                                                      0.223    15.677 r  my_otter/OTTER_REG_FILE/data_out_reg[29]_i_1/O[0]
-                         net (fo=1, routed)           0.000    15.677    my_otter/PROGRAM_COUNTER/data_out_reg[31]_0[0]
-    SLICE_X40Y26         FDCE                                         r  my_otter/PROGRAM_COUNTER/data_out_reg[29]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 my_otter/OTTER_REG_FILE/reg_file_reg_2/CLKARDCLK
-                            (rising edge-triggered cell RAMB18E1)
-  Destination:            my_otter/PROGRAM_COUNTER/data_out_reg[26]/D
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        15.674ns  (logic 4.837ns (30.861%)  route 10.837ns (69.139%))
-  Logic Levels:           14  (CARRY4=7 LUT2=1 LUT6=5 RAMB18E1=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    RAMB18_X2Y5          RAMB18E1                     0.000     0.000 r  my_otter/OTTER_REG_FILE/reg_file_reg_2/CLKARDCLK
-    RAMB18_X2Y5          RAMB18E1 (Prop_ramb18e1_CLKARDCLK_DOADO[1])
-                                                      2.454     2.454 f  my_otter/OTTER_REG_FILE/reg_file_reg_2/DOADO[1]
-                         net (fo=2, routed)           1.881     4.335    my_otter/OTTER_REG_FILE/DE_EX_reg[rs2_data][1]
-    SLICE_X46Y13         LUT6 (Prop_lut6_I4_O)        0.124     4.459 f  my_otter/OTTER_REG_FILE/result0_carry_i_13/O
-                         net (fo=99, routed)          3.886     8.345    my_otter/OTTER_REG_FILE/DE_EX_reg[imm][27][0]
-    SLICE_X45Y29         LUT2 (Prop_lut2_I0_O)        0.150     8.495 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][31]_i_16/O
-                         net (fo=6, routed)           1.655    10.151    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][31]_i_16_n_0
-    SLICE_X55Y19         LUT6 (Prop_lut6_I1_O)        0.326    10.477 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_8/O
-                         net (fo=1, routed)           0.973    11.450    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_8_n_0
-    SLICE_X56Y19         LUT6 (Prop_lut6_I0_O)        0.124    11.574 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_4/O
-                         net (fo=1, routed)           0.607    12.181    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_4_n_0
-    SLICE_X56Y20         LUT6 (Prop_lut6_I2_O)        0.124    12.305 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_2/O
-                         net (fo=3, routed)           1.305    13.610    my_otter/OTTER_REG_FILE/internal_alu[2]
-    SLICE_X41Y19         LUT6 (Prop_lut6_I3_O)        0.124    13.734 r  my_otter/OTTER_REG_FILE/data_out[1]_i_2/O
-                         net (fo=1, routed)           0.519    14.254    my_otter/OTTER_REG_FILE/data_out[1]_i_2_n_0
-    SLICE_X40Y19         CARRY4 (Prop_carry4_DI[1]_CO[3])
-                                                      0.507    14.761 r  my_otter/OTTER_REG_FILE/data_out_reg[1]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.761    my_otter/OTTER_REG_FILE/data_out_reg[1]_i_1_n_0
-    SLICE_X40Y20         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    14.875 r  my_otter/OTTER_REG_FILE/data_out_reg[5]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.875    my_otter/OTTER_REG_FILE/data_out_reg[5]_i_1_n_0
-    SLICE_X40Y21         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    14.989 r  my_otter/OTTER_REG_FILE/data_out_reg[9]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.989    my_otter/OTTER_REG_FILE/data_out_reg[9]_i_1_n_0
-    SLICE_X40Y22         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.103 r  my_otter/OTTER_REG_FILE/data_out_reg[13]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.103    my_otter/OTTER_REG_FILE/data_out_reg[13]_i_1_n_0
-    SLICE_X40Y23         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.217 r  my_otter/OTTER_REG_FILE/data_out_reg[17]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.217    my_otter/OTTER_REG_FILE/data_out_reg[17]_i_1_n_0
-    SLICE_X40Y24         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.331 r  my_otter/OTTER_REG_FILE/data_out_reg[21]_i_1/CO[3]
-                         net (fo=1, routed)           0.009    15.340    my_otter/OTTER_REG_FILE/data_out_reg[21]_i_1_n_0
-    SLICE_X40Y25         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334    15.674 r  my_otter/OTTER_REG_FILE/data_out_reg[25]_i_1/O[1]
-                         net (fo=1, routed)           0.000    15.674    my_otter/PROGRAM_COUNTER/data_out_reg[28]_0[1]
-    SLICE_X40Y25         FDCE                                         r  my_otter/PROGRAM_COUNTER/data_out_reg[26]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 my_otter/OTTER_REG_FILE/reg_file_reg_2/CLKARDCLK
-                            (rising edge-triggered cell RAMB18E1)
-  Destination:            my_otter/PROGRAM_COUNTER/data_out_reg[28]/D
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        15.653ns  (logic 4.816ns (30.768%)  route 10.837ns (69.232%))
-  Logic Levels:           14  (CARRY4=7 LUT2=1 LUT6=5 RAMB18E1=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    RAMB18_X2Y5          RAMB18E1                     0.000     0.000 r  my_otter/OTTER_REG_FILE/reg_file_reg_2/CLKARDCLK
-    RAMB18_X2Y5          RAMB18E1 (Prop_ramb18e1_CLKARDCLK_DOADO[1])
-                                                      2.454     2.454 f  my_otter/OTTER_REG_FILE/reg_file_reg_2/DOADO[1]
-                         net (fo=2, routed)           1.881     4.335    my_otter/OTTER_REG_FILE/DE_EX_reg[rs2_data][1]
-    SLICE_X46Y13         LUT6 (Prop_lut6_I4_O)        0.124     4.459 f  my_otter/OTTER_REG_FILE/result0_carry_i_13/O
-                         net (fo=99, routed)          3.886     8.345    my_otter/OTTER_REG_FILE/DE_EX_reg[imm][27][0]
-    SLICE_X45Y29         LUT2 (Prop_lut2_I0_O)        0.150     8.495 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][31]_i_16/O
-                         net (fo=6, routed)           1.655    10.151    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][31]_i_16_n_0
-    SLICE_X55Y19         LUT6 (Prop_lut6_I1_O)        0.326    10.477 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_8/O
-                         net (fo=1, routed)           0.973    11.450    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_8_n_0
-    SLICE_X56Y19         LUT6 (Prop_lut6_I0_O)        0.124    11.574 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_4/O
-                         net (fo=1, routed)           0.607    12.181    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_4_n_0
-    SLICE_X56Y20         LUT6 (Prop_lut6_I2_O)        0.124    12.305 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_2/O
-                         net (fo=3, routed)           1.305    13.610    my_otter/OTTER_REG_FILE/internal_alu[2]
-    SLICE_X41Y19         LUT6 (Prop_lut6_I3_O)        0.124    13.734 r  my_otter/OTTER_REG_FILE/data_out[1]_i_2/O
-                         net (fo=1, routed)           0.519    14.254    my_otter/OTTER_REG_FILE/data_out[1]_i_2_n_0
-    SLICE_X40Y19         CARRY4 (Prop_carry4_DI[1]_CO[3])
-                                                      0.507    14.761 r  my_otter/OTTER_REG_FILE/data_out_reg[1]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.761    my_otter/OTTER_REG_FILE/data_out_reg[1]_i_1_n_0
-    SLICE_X40Y20         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    14.875 r  my_otter/OTTER_REG_FILE/data_out_reg[5]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.875    my_otter/OTTER_REG_FILE/data_out_reg[5]_i_1_n_0
-    SLICE_X40Y21         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    14.989 r  my_otter/OTTER_REG_FILE/data_out_reg[9]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.989    my_otter/OTTER_REG_FILE/data_out_reg[9]_i_1_n_0
-    SLICE_X40Y22         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.103 r  my_otter/OTTER_REG_FILE/data_out_reg[13]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.103    my_otter/OTTER_REG_FILE/data_out_reg[13]_i_1_n_0
-    SLICE_X40Y23         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.217 r  my_otter/OTTER_REG_FILE/data_out_reg[17]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.217    my_otter/OTTER_REG_FILE/data_out_reg[17]_i_1_n_0
-    SLICE_X40Y24         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.331 r  my_otter/OTTER_REG_FILE/data_out_reg[21]_i_1/CO[3]
-                         net (fo=1, routed)           0.009    15.340    my_otter/OTTER_REG_FILE/data_out_reg[21]_i_1_n_0
-    SLICE_X40Y25         CARRY4 (Prop_carry4_CI_O[3])
-                                                      0.313    15.653 r  my_otter/OTTER_REG_FILE/data_out_reg[25]_i_1/O[3]
-                         net (fo=1, routed)           0.000    15.653    my_otter/PROGRAM_COUNTER/data_out_reg[28]_0[3]
-    SLICE_X40Y25         FDCE                                         r  my_otter/PROGRAM_COUNTER/data_out_reg[28]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 my_otter/EX_MEM_reg[regWrite]/C
+  Source:                 my_otter/EX_MEM_reg[rd_addr][2]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            my_otter/DE_EX_reg[imm][2]/R
+  Destination:            my_otter/IF_DE_reg[IR][10]/R
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        15.611ns  (logic 1.988ns (12.734%)  route 13.623ns (87.266%))
-  Logic Levels:           10  (CARRY4=2 FDRE=1 LUT2=1 LUT3=1 LUT4=1 LUT5=3 LUT6=1)
+  Data Path Delay:        15.455ns  (logic 2.477ns (16.027%)  route 12.978ns (83.973%))
+  Logic Levels:           11  (CARRY4=3 FDRE=1 LUT2=1 LUT3=1 LUT5=2 LUT6=3)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X44Y12         FDRE                         0.000     0.000 r  my_otter/EX_MEM_reg[regWrite]/C
-    SLICE_X44Y12         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  my_otter/EX_MEM_reg[regWrite]/Q
-                         net (fo=3, routed)           1.417     1.873    my_otter/PROGRAM_COUNTER/result0_carry_i_9_0
-    SLICE_X45Y11         LUT5 (Prop_lut5_I0_O)        0.124     1.997 r  my_otter/PROGRAM_COUNTER/result0_carry_i_18/O
-                         net (fo=2, routed)           0.429     2.425    my_otter/PROGRAM_COUNTER/result0_carry_i_18_n_0
-    SLICE_X46Y11         LUT5 (Prop_lut5_I1_O)        0.124     2.549 r  my_otter/PROGRAM_COUNTER/result0_carry_i_10/O
-                         net (fo=32, routed)          3.137     5.686    my_otter/OTTER_REG_FILE/result0_inferred__7/i__carry__0
-    SLICE_X56Y13         LUT5 (Prop_lut5_I3_O)        0.124     5.810 r  my_otter/OTTER_REG_FILE/result0_carry__3_i_2/O
-                         net (fo=22, routed)          0.837     6.647    my_otter/OTTER_REG_FILE/ALU_forward_muxA[18]
-    SLICE_X57Y15         LUT4 (Prop_lut4_I0_O)        0.124     6.771 r  my_otter/OTTER_REG_FILE/i__carry__1_i_7__0/O
-                         net (fo=1, routed)           0.000     6.771    my_otter/BRANCH_CONDITIONAL/branch2_inferred__0/i__carry__2_1[1]
-    SLICE_X57Y15         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     7.321 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__0/i__carry__1/CO[3]
-                         net (fo=1, routed)           0.000     7.321    my_otter/BRANCH_CONDITIONAL/branch2_inferred__0/i__carry__1_n_0
-    SLICE_X57Y16         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.435 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__0/i__carry__2/CO[3]
-                         net (fo=1, routed)           1.514     8.949    my_otter/OTTER_REG_FILE/IF_DE_reg[PC][0]_2[0]
-    SLICE_X45Y15         LUT6 (Prop_lut6_I1_O)        0.124     9.073 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4/O
-                         net (fo=1, routed)           0.810     9.883    my_otter/OTTER_REG_FILE/branch_conditional_E
-    SLICE_X41Y13         LUT3 (Prop_lut3_I0_O)        0.124    10.007 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_1/O
-                         net (fo=98, routed)          2.905    12.912    my_otter/OTTER_REG_FILE/pc_sel
-    SLICE_X41Y25         LUT2 (Prop_lut2_I1_O)        0.124    13.036 r  my_otter/OTTER_REG_FILE/DE_EX[regWrite]_i_1/O
-                         net (fo=103, routed)         2.575    15.611    my_otter/flush_E
-    SLICE_X46Y14         FDRE                                         r  my_otter/DE_EX_reg[imm][2]/R
+    SLICE_X42Y10         FDRE                         0.000     0.000 r  my_otter/EX_MEM_reg[rd_addr][2]/C
+    SLICE_X42Y10         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  my_otter/EX_MEM_reg[rd_addr][2]/Q
+                         net (fo=5, routed)           1.611     2.129    my_otter/PROGRAM_COUNTER/Q[2]
+    SLICE_X46Y9          LUT6 (Prop_lut6_I5_O)        0.124     2.253 f  my_otter/PROGRAM_COUNTER/result0_carry_i_17/O
+                         net (fo=1, routed)           0.660     2.914    my_otter/PROGRAM_COUNTER/result0_carry_i_17_n_0
+    SLICE_X47Y9          LUT5 (Prop_lut5_I2_O)        0.124     3.038 r  my_otter/PROGRAM_COUNTER/result0_carry_i_9/O
+                         net (fo=32, routed)          1.094     4.132    my_otter/OTTER_REG_FILE/forwardA_E[0]
+    SLICE_X48Y8          LUT5 (Prop_lut5_I2_O)        0.124     4.256 r  my_otter/OTTER_REG_FILE/result0_carry_i_3/O
+                         net (fo=24, routed)          2.561     6.816    my_otter/OTTER_REG_FILE/ALU_forward_muxA[1]
+    SLICE_X41Y10         LUT6 (Prop_lut6_I0_O)        0.124     6.940 r  my_otter/OTTER_REG_FILE/i__carry_i_4__3/O
+                         net (fo=1, routed)           0.000     6.940    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_0[0]
+    SLICE_X41Y10         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.472 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     7.472    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry_n_0
+    SLICE_X41Y11         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.586 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.586    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_n_0
+    SLICE_X41Y12         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     7.814 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__1/CO[2]
+                         net (fo=1, routed)           0.563     8.377    my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4_0[0]
+    SLICE_X37Y13         LUT6 (Prop_lut6_I0_O)        0.313     8.690 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_8/O
+                         net (fo=1, routed)           0.822     9.512    my_otter/OTTER_REG_FILE/branch_conditional_E
+    SLICE_X40Y13         LUT3 (Prop_lut3_I0_O)        0.124     9.636 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4/O
+                         net (fo=35, routed)          2.036    11.672    my_otter/OTTER_REG_FILE/pc_sel
+    SLICE_X37Y19         LUT2 (Prop_lut2_I1_O)        0.152    11.824 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_1/O
+                         net (fo=64, routed)          3.631    15.455    my_otter/flush_D
+    SLICE_X48Y13         FDRE                                         r  my_otter/IF_DE_reg[IR][10]/R
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 my_otter/EX_MEM_reg[regWrite]/C
+  Source:                 my_otter/EX_MEM_reg[rd_addr][2]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            my_otter/DE_EX_reg[imm][3]/R
+  Destination:            my_otter/IF_DE_reg[IR][18]/R
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        15.611ns  (logic 1.988ns (12.734%)  route 13.623ns (87.266%))
-  Logic Levels:           10  (CARRY4=2 FDRE=1 LUT2=1 LUT3=1 LUT4=1 LUT5=3 LUT6=1)
+  Data Path Delay:        15.451ns  (logic 2.477ns (16.032%)  route 12.974ns (83.968%))
+  Logic Levels:           11  (CARRY4=3 FDRE=1 LUT2=1 LUT3=1 LUT5=2 LUT6=3)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X44Y12         FDRE                         0.000     0.000 r  my_otter/EX_MEM_reg[regWrite]/C
-    SLICE_X44Y12         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  my_otter/EX_MEM_reg[regWrite]/Q
-                         net (fo=3, routed)           1.417     1.873    my_otter/PROGRAM_COUNTER/result0_carry_i_9_0
-    SLICE_X45Y11         LUT5 (Prop_lut5_I0_O)        0.124     1.997 r  my_otter/PROGRAM_COUNTER/result0_carry_i_18/O
-                         net (fo=2, routed)           0.429     2.425    my_otter/PROGRAM_COUNTER/result0_carry_i_18_n_0
-    SLICE_X46Y11         LUT5 (Prop_lut5_I1_O)        0.124     2.549 r  my_otter/PROGRAM_COUNTER/result0_carry_i_10/O
-                         net (fo=32, routed)          3.137     5.686    my_otter/OTTER_REG_FILE/result0_inferred__7/i__carry__0
-    SLICE_X56Y13         LUT5 (Prop_lut5_I3_O)        0.124     5.810 r  my_otter/OTTER_REG_FILE/result0_carry__3_i_2/O
-                         net (fo=22, routed)          0.837     6.647    my_otter/OTTER_REG_FILE/ALU_forward_muxA[18]
-    SLICE_X57Y15         LUT4 (Prop_lut4_I0_O)        0.124     6.771 r  my_otter/OTTER_REG_FILE/i__carry__1_i_7__0/O
-                         net (fo=1, routed)           0.000     6.771    my_otter/BRANCH_CONDITIONAL/branch2_inferred__0/i__carry__2_1[1]
-    SLICE_X57Y15         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     7.321 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__0/i__carry__1/CO[3]
-                         net (fo=1, routed)           0.000     7.321    my_otter/BRANCH_CONDITIONAL/branch2_inferred__0/i__carry__1_n_0
-    SLICE_X57Y16         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.435 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__0/i__carry__2/CO[3]
-                         net (fo=1, routed)           1.514     8.949    my_otter/OTTER_REG_FILE/IF_DE_reg[PC][0]_2[0]
-    SLICE_X45Y15         LUT6 (Prop_lut6_I1_O)        0.124     9.073 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4/O
-                         net (fo=1, routed)           0.810     9.883    my_otter/OTTER_REG_FILE/branch_conditional_E
-    SLICE_X41Y13         LUT3 (Prop_lut3_I0_O)        0.124    10.007 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_1/O
-                         net (fo=98, routed)          2.905    12.912    my_otter/OTTER_REG_FILE/pc_sel
-    SLICE_X41Y25         LUT2 (Prop_lut2_I1_O)        0.124    13.036 r  my_otter/OTTER_REG_FILE/DE_EX[regWrite]_i_1/O
-                         net (fo=103, routed)         2.575    15.611    my_otter/flush_E
-    SLICE_X46Y14         FDRE                                         r  my_otter/DE_EX_reg[imm][3]/R
+    SLICE_X42Y10         FDRE                         0.000     0.000 r  my_otter/EX_MEM_reg[rd_addr][2]/C
+    SLICE_X42Y10         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  my_otter/EX_MEM_reg[rd_addr][2]/Q
+                         net (fo=5, routed)           1.611     2.129    my_otter/PROGRAM_COUNTER/Q[2]
+    SLICE_X46Y9          LUT6 (Prop_lut6_I5_O)        0.124     2.253 f  my_otter/PROGRAM_COUNTER/result0_carry_i_17/O
+                         net (fo=1, routed)           0.660     2.914    my_otter/PROGRAM_COUNTER/result0_carry_i_17_n_0
+    SLICE_X47Y9          LUT5 (Prop_lut5_I2_O)        0.124     3.038 r  my_otter/PROGRAM_COUNTER/result0_carry_i_9/O
+                         net (fo=32, routed)          1.094     4.132    my_otter/OTTER_REG_FILE/forwardA_E[0]
+    SLICE_X48Y8          LUT5 (Prop_lut5_I2_O)        0.124     4.256 r  my_otter/OTTER_REG_FILE/result0_carry_i_3/O
+                         net (fo=24, routed)          2.561     6.816    my_otter/OTTER_REG_FILE/ALU_forward_muxA[1]
+    SLICE_X41Y10         LUT6 (Prop_lut6_I0_O)        0.124     6.940 r  my_otter/OTTER_REG_FILE/i__carry_i_4__3/O
+                         net (fo=1, routed)           0.000     6.940    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_0[0]
+    SLICE_X41Y10         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.472 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     7.472    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry_n_0
+    SLICE_X41Y11         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.586 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.586    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_n_0
+    SLICE_X41Y12         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     7.814 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__1/CO[2]
+                         net (fo=1, routed)           0.563     8.377    my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4_0[0]
+    SLICE_X37Y13         LUT6 (Prop_lut6_I0_O)        0.313     8.690 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_8/O
+                         net (fo=1, routed)           0.822     9.512    my_otter/OTTER_REG_FILE/branch_conditional_E
+    SLICE_X40Y13         LUT3 (Prop_lut3_I0_O)        0.124     9.636 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4/O
+                         net (fo=35, routed)          2.036    11.672    my_otter/OTTER_REG_FILE/pc_sel
+    SLICE_X37Y19         LUT2 (Prop_lut2_I1_O)        0.152    11.824 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_1/O
+                         net (fo=64, routed)          3.627    15.451    my_otter/flush_D
+    SLICE_X49Y13         FDRE                                         r  my_otter/IF_DE_reg[IR][18]/R
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 my_otter/OTTER_REG_FILE/reg_file_reg_2/CLKARDCLK
-                            (rising edge-triggered cell RAMB18E1)
-  Destination:            my_otter/PROGRAM_COUNTER/data_out_reg[27]/D
+  Source:                 my_otter/EX_MEM_reg[rd_addr][2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            my_otter/IF_DE_reg[IR][0]/R
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        15.579ns  (logic 4.742ns (30.439%)  route 10.837ns (69.561%))
-  Logic Levels:           14  (CARRY4=7 LUT2=1 LUT6=5 RAMB18E1=1)
+  Data Path Delay:        15.337ns  (logic 2.477ns (16.150%)  route 12.860ns (83.850%))
+  Logic Levels:           11  (CARRY4=3 FDRE=1 LUT2=1 LUT3=1 LUT5=2 LUT6=3)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    RAMB18_X2Y5          RAMB18E1                     0.000     0.000 r  my_otter/OTTER_REG_FILE/reg_file_reg_2/CLKARDCLK
-    RAMB18_X2Y5          RAMB18E1 (Prop_ramb18e1_CLKARDCLK_DOADO[1])
-                                                      2.454     2.454 f  my_otter/OTTER_REG_FILE/reg_file_reg_2/DOADO[1]
-                         net (fo=2, routed)           1.881     4.335    my_otter/OTTER_REG_FILE/DE_EX_reg[rs2_data][1]
-    SLICE_X46Y13         LUT6 (Prop_lut6_I4_O)        0.124     4.459 f  my_otter/OTTER_REG_FILE/result0_carry_i_13/O
-                         net (fo=99, routed)          3.886     8.345    my_otter/OTTER_REG_FILE/DE_EX_reg[imm][27][0]
-    SLICE_X45Y29         LUT2 (Prop_lut2_I0_O)        0.150     8.495 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][31]_i_16/O
-                         net (fo=6, routed)           1.655    10.151    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][31]_i_16_n_0
-    SLICE_X55Y19         LUT6 (Prop_lut6_I1_O)        0.326    10.477 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_8/O
-                         net (fo=1, routed)           0.973    11.450    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_8_n_0
-    SLICE_X56Y19         LUT6 (Prop_lut6_I0_O)        0.124    11.574 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_4/O
-                         net (fo=1, routed)           0.607    12.181    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_4_n_0
-    SLICE_X56Y20         LUT6 (Prop_lut6_I2_O)        0.124    12.305 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_2/O
-                         net (fo=3, routed)           1.305    13.610    my_otter/OTTER_REG_FILE/internal_alu[2]
-    SLICE_X41Y19         LUT6 (Prop_lut6_I3_O)        0.124    13.734 r  my_otter/OTTER_REG_FILE/data_out[1]_i_2/O
-                         net (fo=1, routed)           0.519    14.254    my_otter/OTTER_REG_FILE/data_out[1]_i_2_n_0
-    SLICE_X40Y19         CARRY4 (Prop_carry4_DI[1]_CO[3])
-                                                      0.507    14.761 r  my_otter/OTTER_REG_FILE/data_out_reg[1]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.761    my_otter/OTTER_REG_FILE/data_out_reg[1]_i_1_n_0
-    SLICE_X40Y20         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    14.875 r  my_otter/OTTER_REG_FILE/data_out_reg[5]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.875    my_otter/OTTER_REG_FILE/data_out_reg[5]_i_1_n_0
-    SLICE_X40Y21         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    14.989 r  my_otter/OTTER_REG_FILE/data_out_reg[9]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.989    my_otter/OTTER_REG_FILE/data_out_reg[9]_i_1_n_0
-    SLICE_X40Y22         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.103 r  my_otter/OTTER_REG_FILE/data_out_reg[13]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.103    my_otter/OTTER_REG_FILE/data_out_reg[13]_i_1_n_0
-    SLICE_X40Y23         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.217 r  my_otter/OTTER_REG_FILE/data_out_reg[17]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.217    my_otter/OTTER_REG_FILE/data_out_reg[17]_i_1_n_0
-    SLICE_X40Y24         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.331 r  my_otter/OTTER_REG_FILE/data_out_reg[21]_i_1/CO[3]
-                         net (fo=1, routed)           0.009    15.340    my_otter/OTTER_REG_FILE/data_out_reg[21]_i_1_n_0
-    SLICE_X40Y25         CARRY4 (Prop_carry4_CI_O[2])
-                                                      0.239    15.579 r  my_otter/OTTER_REG_FILE/data_out_reg[25]_i_1/O[2]
-                         net (fo=1, routed)           0.000    15.579    my_otter/PROGRAM_COUNTER/data_out_reg[28]_0[2]
-    SLICE_X40Y25         FDCE                                         r  my_otter/PROGRAM_COUNTER/data_out_reg[27]/D
+    SLICE_X42Y10         FDRE                         0.000     0.000 r  my_otter/EX_MEM_reg[rd_addr][2]/C
+    SLICE_X42Y10         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  my_otter/EX_MEM_reg[rd_addr][2]/Q
+                         net (fo=5, routed)           1.611     2.129    my_otter/PROGRAM_COUNTER/Q[2]
+    SLICE_X46Y9          LUT6 (Prop_lut6_I5_O)        0.124     2.253 f  my_otter/PROGRAM_COUNTER/result0_carry_i_17/O
+                         net (fo=1, routed)           0.660     2.914    my_otter/PROGRAM_COUNTER/result0_carry_i_17_n_0
+    SLICE_X47Y9          LUT5 (Prop_lut5_I2_O)        0.124     3.038 r  my_otter/PROGRAM_COUNTER/result0_carry_i_9/O
+                         net (fo=32, routed)          1.094     4.132    my_otter/OTTER_REG_FILE/forwardA_E[0]
+    SLICE_X48Y8          LUT5 (Prop_lut5_I2_O)        0.124     4.256 r  my_otter/OTTER_REG_FILE/result0_carry_i_3/O
+                         net (fo=24, routed)          2.561     6.816    my_otter/OTTER_REG_FILE/ALU_forward_muxA[1]
+    SLICE_X41Y10         LUT6 (Prop_lut6_I0_O)        0.124     6.940 r  my_otter/OTTER_REG_FILE/i__carry_i_4__3/O
+                         net (fo=1, routed)           0.000     6.940    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_0[0]
+    SLICE_X41Y10         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.472 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     7.472    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry_n_0
+    SLICE_X41Y11         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.586 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.586    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_n_0
+    SLICE_X41Y12         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     7.814 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__1/CO[2]
+                         net (fo=1, routed)           0.563     8.377    my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4_0[0]
+    SLICE_X37Y13         LUT6 (Prop_lut6_I0_O)        0.313     8.690 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_8/O
+                         net (fo=1, routed)           0.822     9.512    my_otter/OTTER_REG_FILE/branch_conditional_E
+    SLICE_X40Y13         LUT3 (Prop_lut3_I0_O)        0.124     9.636 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4/O
+                         net (fo=35, routed)          2.036    11.672    my_otter/OTTER_REG_FILE/pc_sel
+    SLICE_X37Y19         LUT2 (Prop_lut2_I1_O)        0.152    11.824 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_1/O
+                         net (fo=64, routed)          3.514    15.337    my_otter/flush_D
+    SLICE_X52Y14         FDRE                                         r  my_otter/IF_DE_reg[IR][0]/R
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 my_otter/OTTER_REG_FILE/reg_file_reg_2/CLKARDCLK
-                            (rising edge-triggered cell RAMB18E1)
-  Destination:            my_otter/PROGRAM_COUNTER/data_out_reg[25]/D
+  Source:                 my_otter/EX_MEM_reg[rd_addr][2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            my_otter/IF_DE_reg[IR][12]/R
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        15.563ns  (logic 4.726ns (30.368%)  route 10.837ns (69.632%))
-  Logic Levels:           14  (CARRY4=7 LUT2=1 LUT6=5 RAMB18E1=1)
+  Data Path Delay:        15.266ns  (logic 2.477ns (16.225%)  route 12.789ns (83.775%))
+  Logic Levels:           11  (CARRY4=3 FDRE=1 LUT2=1 LUT3=1 LUT5=2 LUT6=3)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    RAMB18_X2Y5          RAMB18E1                     0.000     0.000 r  my_otter/OTTER_REG_FILE/reg_file_reg_2/CLKARDCLK
-    RAMB18_X2Y5          RAMB18E1 (Prop_ramb18e1_CLKARDCLK_DOADO[1])
-                                                      2.454     2.454 f  my_otter/OTTER_REG_FILE/reg_file_reg_2/DOADO[1]
-                         net (fo=2, routed)           1.881     4.335    my_otter/OTTER_REG_FILE/DE_EX_reg[rs2_data][1]
-    SLICE_X46Y13         LUT6 (Prop_lut6_I4_O)        0.124     4.459 f  my_otter/OTTER_REG_FILE/result0_carry_i_13/O
-                         net (fo=99, routed)          3.886     8.345    my_otter/OTTER_REG_FILE/DE_EX_reg[imm][27][0]
-    SLICE_X45Y29         LUT2 (Prop_lut2_I0_O)        0.150     8.495 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][31]_i_16/O
-                         net (fo=6, routed)           1.655    10.151    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][31]_i_16_n_0
-    SLICE_X55Y19         LUT6 (Prop_lut6_I1_O)        0.326    10.477 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_8/O
-                         net (fo=1, routed)           0.973    11.450    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_8_n_0
-    SLICE_X56Y19         LUT6 (Prop_lut6_I0_O)        0.124    11.574 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_4/O
-                         net (fo=1, routed)           0.607    12.181    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_4_n_0
-    SLICE_X56Y20         LUT6 (Prop_lut6_I2_O)        0.124    12.305 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_2/O
-                         net (fo=3, routed)           1.305    13.610    my_otter/OTTER_REG_FILE/internal_alu[2]
-    SLICE_X41Y19         LUT6 (Prop_lut6_I3_O)        0.124    13.734 r  my_otter/OTTER_REG_FILE/data_out[1]_i_2/O
-                         net (fo=1, routed)           0.519    14.254    my_otter/OTTER_REG_FILE/data_out[1]_i_2_n_0
-    SLICE_X40Y19         CARRY4 (Prop_carry4_DI[1]_CO[3])
-                                                      0.507    14.761 r  my_otter/OTTER_REG_FILE/data_out_reg[1]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.761    my_otter/OTTER_REG_FILE/data_out_reg[1]_i_1_n_0
-    SLICE_X40Y20         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    14.875 r  my_otter/OTTER_REG_FILE/data_out_reg[5]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.875    my_otter/OTTER_REG_FILE/data_out_reg[5]_i_1_n_0
-    SLICE_X40Y21         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    14.989 r  my_otter/OTTER_REG_FILE/data_out_reg[9]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.989    my_otter/OTTER_REG_FILE/data_out_reg[9]_i_1_n_0
-    SLICE_X40Y22         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.103 r  my_otter/OTTER_REG_FILE/data_out_reg[13]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.103    my_otter/OTTER_REG_FILE/data_out_reg[13]_i_1_n_0
-    SLICE_X40Y23         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.217 r  my_otter/OTTER_REG_FILE/data_out_reg[17]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.217    my_otter/OTTER_REG_FILE/data_out_reg[17]_i_1_n_0
-    SLICE_X40Y24         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.331 r  my_otter/OTTER_REG_FILE/data_out_reg[21]_i_1/CO[3]
-                         net (fo=1, routed)           0.009    15.340    my_otter/OTTER_REG_FILE/data_out_reg[21]_i_1_n_0
-    SLICE_X40Y25         CARRY4 (Prop_carry4_CI_O[0])
-                                                      0.223    15.563 r  my_otter/OTTER_REG_FILE/data_out_reg[25]_i_1/O[0]
-                         net (fo=1, routed)           0.000    15.563    my_otter/PROGRAM_COUNTER/data_out_reg[28]_0[0]
-    SLICE_X40Y25         FDCE                                         r  my_otter/PROGRAM_COUNTER/data_out_reg[25]/D
+    SLICE_X42Y10         FDRE                         0.000     0.000 r  my_otter/EX_MEM_reg[rd_addr][2]/C
+    SLICE_X42Y10         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  my_otter/EX_MEM_reg[rd_addr][2]/Q
+                         net (fo=5, routed)           1.611     2.129    my_otter/PROGRAM_COUNTER/Q[2]
+    SLICE_X46Y9          LUT6 (Prop_lut6_I5_O)        0.124     2.253 f  my_otter/PROGRAM_COUNTER/result0_carry_i_17/O
+                         net (fo=1, routed)           0.660     2.914    my_otter/PROGRAM_COUNTER/result0_carry_i_17_n_0
+    SLICE_X47Y9          LUT5 (Prop_lut5_I2_O)        0.124     3.038 r  my_otter/PROGRAM_COUNTER/result0_carry_i_9/O
+                         net (fo=32, routed)          1.094     4.132    my_otter/OTTER_REG_FILE/forwardA_E[0]
+    SLICE_X48Y8          LUT5 (Prop_lut5_I2_O)        0.124     4.256 r  my_otter/OTTER_REG_FILE/result0_carry_i_3/O
+                         net (fo=24, routed)          2.561     6.816    my_otter/OTTER_REG_FILE/ALU_forward_muxA[1]
+    SLICE_X41Y10         LUT6 (Prop_lut6_I0_O)        0.124     6.940 r  my_otter/OTTER_REG_FILE/i__carry_i_4__3/O
+                         net (fo=1, routed)           0.000     6.940    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_0[0]
+    SLICE_X41Y10         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.472 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     7.472    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry_n_0
+    SLICE_X41Y11         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.586 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.586    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_n_0
+    SLICE_X41Y12         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     7.814 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__1/CO[2]
+                         net (fo=1, routed)           0.563     8.377    my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4_0[0]
+    SLICE_X37Y13         LUT6 (Prop_lut6_I0_O)        0.313     8.690 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_8/O
+                         net (fo=1, routed)           0.822     9.512    my_otter/OTTER_REG_FILE/branch_conditional_E
+    SLICE_X40Y13         LUT3 (Prop_lut3_I0_O)        0.124     9.636 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4/O
+                         net (fo=35, routed)          2.036    11.672    my_otter/OTTER_REG_FILE/pc_sel
+    SLICE_X37Y19         LUT2 (Prop_lut2_I1_O)        0.152    11.824 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_1/O
+                         net (fo=64, routed)          3.443    15.266    my_otter/flush_D
+    SLICE_X50Y14         FDRE                                         r  my_otter/IF_DE_reg[IR][12]/R
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 my_otter/OTTER_REG_FILE/reg_file_reg_2/CLKARDCLK
-                            (rising edge-triggered cell RAMB18E1)
-  Destination:            my_otter/PROGRAM_COUNTER/data_out_reg[22]/D
+  Source:                 my_otter/EX_MEM_reg[rd_addr][2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            my_otter/IF_DE_reg[IR][14]/R
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        15.551ns  (logic 4.723ns (30.372%)  route 10.828ns (69.628%))
-  Logic Levels:           13  (CARRY4=6 LUT2=1 LUT6=5 RAMB18E1=1)
+  Data Path Delay:        15.183ns  (logic 2.477ns (16.314%)  route 12.706ns (83.686%))
+  Logic Levels:           11  (CARRY4=3 FDRE=1 LUT2=1 LUT3=1 LUT5=2 LUT6=3)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    RAMB18_X2Y5          RAMB18E1                     0.000     0.000 r  my_otter/OTTER_REG_FILE/reg_file_reg_2/CLKARDCLK
-    RAMB18_X2Y5          RAMB18E1 (Prop_ramb18e1_CLKARDCLK_DOADO[1])
-                                                      2.454     2.454 f  my_otter/OTTER_REG_FILE/reg_file_reg_2/DOADO[1]
-                         net (fo=2, routed)           1.881     4.335    my_otter/OTTER_REG_FILE/DE_EX_reg[rs2_data][1]
-    SLICE_X46Y13         LUT6 (Prop_lut6_I4_O)        0.124     4.459 f  my_otter/OTTER_REG_FILE/result0_carry_i_13/O
-                         net (fo=99, routed)          3.886     8.345    my_otter/OTTER_REG_FILE/DE_EX_reg[imm][27][0]
-    SLICE_X45Y29         LUT2 (Prop_lut2_I0_O)        0.150     8.495 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][31]_i_16/O
-                         net (fo=6, routed)           1.655    10.151    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][31]_i_16_n_0
-    SLICE_X55Y19         LUT6 (Prop_lut6_I1_O)        0.326    10.477 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_8/O
-                         net (fo=1, routed)           0.973    11.450    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_8_n_0
-    SLICE_X56Y19         LUT6 (Prop_lut6_I0_O)        0.124    11.574 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_4/O
-                         net (fo=1, routed)           0.607    12.181    my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_4_n_0
-    SLICE_X56Y20         LUT6 (Prop_lut6_I2_O)        0.124    12.305 r  my_otter/OTTER_REG_FILE/EX_MEM[ALU_result][2]_i_2/O
-                         net (fo=3, routed)           1.305    13.610    my_otter/OTTER_REG_FILE/internal_alu[2]
-    SLICE_X41Y19         LUT6 (Prop_lut6_I3_O)        0.124    13.734 r  my_otter/OTTER_REG_FILE/data_out[1]_i_2/O
-                         net (fo=1, routed)           0.519    14.254    my_otter/OTTER_REG_FILE/data_out[1]_i_2_n_0
-    SLICE_X40Y19         CARRY4 (Prop_carry4_DI[1]_CO[3])
-                                                      0.507    14.761 r  my_otter/OTTER_REG_FILE/data_out_reg[1]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.761    my_otter/OTTER_REG_FILE/data_out_reg[1]_i_1_n_0
-    SLICE_X40Y20         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    14.875 r  my_otter/OTTER_REG_FILE/data_out_reg[5]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.875    my_otter/OTTER_REG_FILE/data_out_reg[5]_i_1_n_0
-    SLICE_X40Y21         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    14.989 r  my_otter/OTTER_REG_FILE/data_out_reg[9]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    14.989    my_otter/OTTER_REG_FILE/data_out_reg[9]_i_1_n_0
-    SLICE_X40Y22         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.103 r  my_otter/OTTER_REG_FILE/data_out_reg[13]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.103    my_otter/OTTER_REG_FILE/data_out_reg[13]_i_1_n_0
-    SLICE_X40Y23         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    15.217 r  my_otter/OTTER_REG_FILE/data_out_reg[17]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    15.217    my_otter/OTTER_REG_FILE/data_out_reg[17]_i_1_n_0
-    SLICE_X40Y24         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334    15.551 r  my_otter/OTTER_REG_FILE/data_out_reg[21]_i_1/O[1]
-                         net (fo=1, routed)           0.000    15.551    my_otter/PROGRAM_COUNTER/data_out_reg[24]_0[1]
-    SLICE_X40Y24         FDCE                                         r  my_otter/PROGRAM_COUNTER/data_out_reg[22]/D
+    SLICE_X42Y10         FDRE                         0.000     0.000 r  my_otter/EX_MEM_reg[rd_addr][2]/C
+    SLICE_X42Y10         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  my_otter/EX_MEM_reg[rd_addr][2]/Q
+                         net (fo=5, routed)           1.611     2.129    my_otter/PROGRAM_COUNTER/Q[2]
+    SLICE_X46Y9          LUT6 (Prop_lut6_I5_O)        0.124     2.253 f  my_otter/PROGRAM_COUNTER/result0_carry_i_17/O
+                         net (fo=1, routed)           0.660     2.914    my_otter/PROGRAM_COUNTER/result0_carry_i_17_n_0
+    SLICE_X47Y9          LUT5 (Prop_lut5_I2_O)        0.124     3.038 r  my_otter/PROGRAM_COUNTER/result0_carry_i_9/O
+                         net (fo=32, routed)          1.094     4.132    my_otter/OTTER_REG_FILE/forwardA_E[0]
+    SLICE_X48Y8          LUT5 (Prop_lut5_I2_O)        0.124     4.256 r  my_otter/OTTER_REG_FILE/result0_carry_i_3/O
+                         net (fo=24, routed)          2.561     6.816    my_otter/OTTER_REG_FILE/ALU_forward_muxA[1]
+    SLICE_X41Y10         LUT6 (Prop_lut6_I0_O)        0.124     6.940 r  my_otter/OTTER_REG_FILE/i__carry_i_4__3/O
+                         net (fo=1, routed)           0.000     6.940    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_0[0]
+    SLICE_X41Y10         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.472 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     7.472    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry_n_0
+    SLICE_X41Y11         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.586 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.586    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_n_0
+    SLICE_X41Y12         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     7.814 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__1/CO[2]
+                         net (fo=1, routed)           0.563     8.377    my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4_0[0]
+    SLICE_X37Y13         LUT6 (Prop_lut6_I0_O)        0.313     8.690 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_8/O
+                         net (fo=1, routed)           0.822     9.512    my_otter/OTTER_REG_FILE/branch_conditional_E
+    SLICE_X40Y13         LUT3 (Prop_lut3_I0_O)        0.124     9.636 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4/O
+                         net (fo=35, routed)          2.036    11.672    my_otter/OTTER_REG_FILE/pc_sel
+    SLICE_X37Y19         LUT2 (Prop_lut2_I1_O)        0.152    11.824 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_1/O
+                         net (fo=64, routed)          3.360    15.183    my_otter/flush_D
+    SLICE_X50Y17         FDRE                                         r  my_otter/IF_DE_reg[IR][14]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 my_otter/EX_MEM_reg[rd_addr][2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            my_otter/IF_DE_reg[IR][25]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        15.162ns  (logic 2.477ns (16.337%)  route 12.685ns (83.663%))
+  Logic Levels:           11  (CARRY4=3 FDRE=1 LUT2=1 LUT3=1 LUT5=2 LUT6=3)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X42Y10         FDRE                         0.000     0.000 r  my_otter/EX_MEM_reg[rd_addr][2]/C
+    SLICE_X42Y10         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  my_otter/EX_MEM_reg[rd_addr][2]/Q
+                         net (fo=5, routed)           1.611     2.129    my_otter/PROGRAM_COUNTER/Q[2]
+    SLICE_X46Y9          LUT6 (Prop_lut6_I5_O)        0.124     2.253 f  my_otter/PROGRAM_COUNTER/result0_carry_i_17/O
+                         net (fo=1, routed)           0.660     2.914    my_otter/PROGRAM_COUNTER/result0_carry_i_17_n_0
+    SLICE_X47Y9          LUT5 (Prop_lut5_I2_O)        0.124     3.038 r  my_otter/PROGRAM_COUNTER/result0_carry_i_9/O
+                         net (fo=32, routed)          1.094     4.132    my_otter/OTTER_REG_FILE/forwardA_E[0]
+    SLICE_X48Y8          LUT5 (Prop_lut5_I2_O)        0.124     4.256 r  my_otter/OTTER_REG_FILE/result0_carry_i_3/O
+                         net (fo=24, routed)          2.561     6.816    my_otter/OTTER_REG_FILE/ALU_forward_muxA[1]
+    SLICE_X41Y10         LUT6 (Prop_lut6_I0_O)        0.124     6.940 r  my_otter/OTTER_REG_FILE/i__carry_i_4__3/O
+                         net (fo=1, routed)           0.000     6.940    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_0[0]
+    SLICE_X41Y10         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.472 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     7.472    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry_n_0
+    SLICE_X41Y11         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.586 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.586    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_n_0
+    SLICE_X41Y12         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     7.814 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__1/CO[2]
+                         net (fo=1, routed)           0.563     8.377    my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4_0[0]
+    SLICE_X37Y13         LUT6 (Prop_lut6_I0_O)        0.313     8.690 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_8/O
+                         net (fo=1, routed)           0.822     9.512    my_otter/OTTER_REG_FILE/branch_conditional_E
+    SLICE_X40Y13         LUT3 (Prop_lut3_I0_O)        0.124     9.636 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4/O
+                         net (fo=35, routed)          2.036    11.672    my_otter/OTTER_REG_FILE/pc_sel
+    SLICE_X37Y19         LUT2 (Prop_lut2_I1_O)        0.152    11.824 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_1/O
+                         net (fo=64, routed)          3.338    15.162    my_otter/flush_D
+    SLICE_X48Y20         FDRE                                         r  my_otter/IF_DE_reg[IR][25]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 my_otter/EX_MEM_reg[rd_addr][2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            my_otter/IF_DE_reg[IR][29]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        15.161ns  (logic 2.477ns (16.338%)  route 12.684ns (83.662%))
+  Logic Levels:           11  (CARRY4=3 FDRE=1 LUT2=1 LUT3=1 LUT5=2 LUT6=3)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X42Y10         FDRE                         0.000     0.000 r  my_otter/EX_MEM_reg[rd_addr][2]/C
+    SLICE_X42Y10         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  my_otter/EX_MEM_reg[rd_addr][2]/Q
+                         net (fo=5, routed)           1.611     2.129    my_otter/PROGRAM_COUNTER/Q[2]
+    SLICE_X46Y9          LUT6 (Prop_lut6_I5_O)        0.124     2.253 f  my_otter/PROGRAM_COUNTER/result0_carry_i_17/O
+                         net (fo=1, routed)           0.660     2.914    my_otter/PROGRAM_COUNTER/result0_carry_i_17_n_0
+    SLICE_X47Y9          LUT5 (Prop_lut5_I2_O)        0.124     3.038 r  my_otter/PROGRAM_COUNTER/result0_carry_i_9/O
+                         net (fo=32, routed)          1.094     4.132    my_otter/OTTER_REG_FILE/forwardA_E[0]
+    SLICE_X48Y8          LUT5 (Prop_lut5_I2_O)        0.124     4.256 r  my_otter/OTTER_REG_FILE/result0_carry_i_3/O
+                         net (fo=24, routed)          2.561     6.816    my_otter/OTTER_REG_FILE/ALU_forward_muxA[1]
+    SLICE_X41Y10         LUT6 (Prop_lut6_I0_O)        0.124     6.940 r  my_otter/OTTER_REG_FILE/i__carry_i_4__3/O
+                         net (fo=1, routed)           0.000     6.940    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_0[0]
+    SLICE_X41Y10         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.472 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     7.472    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry_n_0
+    SLICE_X41Y11         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.586 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.586    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_n_0
+    SLICE_X41Y12         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     7.814 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__1/CO[2]
+                         net (fo=1, routed)           0.563     8.377    my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4_0[0]
+    SLICE_X37Y13         LUT6 (Prop_lut6_I0_O)        0.313     8.690 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_8/O
+                         net (fo=1, routed)           0.822     9.512    my_otter/OTTER_REG_FILE/branch_conditional_E
+    SLICE_X40Y13         LUT3 (Prop_lut3_I0_O)        0.124     9.636 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4/O
+                         net (fo=35, routed)          2.036    11.672    my_otter/OTTER_REG_FILE/pc_sel
+    SLICE_X37Y19         LUT2 (Prop_lut2_I1_O)        0.152    11.824 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_1/O
+                         net (fo=64, routed)          3.337    15.161    my_otter/flush_D
+    SLICE_X50Y20         FDRE                                         r  my_otter/IF_DE_reg[IR][29]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 my_otter/EX_MEM_reg[rd_addr][2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            my_otter/IF_DE_reg[IR][11]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        15.143ns  (logic 2.477ns (16.357%)  route 12.666ns (83.643%))
+  Logic Levels:           11  (CARRY4=3 FDRE=1 LUT2=1 LUT3=1 LUT5=2 LUT6=3)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X42Y10         FDRE                         0.000     0.000 r  my_otter/EX_MEM_reg[rd_addr][2]/C
+    SLICE_X42Y10         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  my_otter/EX_MEM_reg[rd_addr][2]/Q
+                         net (fo=5, routed)           1.611     2.129    my_otter/PROGRAM_COUNTER/Q[2]
+    SLICE_X46Y9          LUT6 (Prop_lut6_I5_O)        0.124     2.253 f  my_otter/PROGRAM_COUNTER/result0_carry_i_17/O
+                         net (fo=1, routed)           0.660     2.914    my_otter/PROGRAM_COUNTER/result0_carry_i_17_n_0
+    SLICE_X47Y9          LUT5 (Prop_lut5_I2_O)        0.124     3.038 r  my_otter/PROGRAM_COUNTER/result0_carry_i_9/O
+                         net (fo=32, routed)          1.094     4.132    my_otter/OTTER_REG_FILE/forwardA_E[0]
+    SLICE_X48Y8          LUT5 (Prop_lut5_I2_O)        0.124     4.256 r  my_otter/OTTER_REG_FILE/result0_carry_i_3/O
+                         net (fo=24, routed)          2.561     6.816    my_otter/OTTER_REG_FILE/ALU_forward_muxA[1]
+    SLICE_X41Y10         LUT6 (Prop_lut6_I0_O)        0.124     6.940 r  my_otter/OTTER_REG_FILE/i__carry_i_4__3/O
+                         net (fo=1, routed)           0.000     6.940    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_0[0]
+    SLICE_X41Y10         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.472 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     7.472    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry_n_0
+    SLICE_X41Y11         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.586 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.586    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_n_0
+    SLICE_X41Y12         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     7.814 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__1/CO[2]
+                         net (fo=1, routed)           0.563     8.377    my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4_0[0]
+    SLICE_X37Y13         LUT6 (Prop_lut6_I0_O)        0.313     8.690 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_8/O
+                         net (fo=1, routed)           0.822     9.512    my_otter/OTTER_REG_FILE/branch_conditional_E
+    SLICE_X40Y13         LUT3 (Prop_lut3_I0_O)        0.124     9.636 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4/O
+                         net (fo=35, routed)          2.036    11.672    my_otter/OTTER_REG_FILE/pc_sel
+    SLICE_X37Y19         LUT2 (Prop_lut2_I1_O)        0.152    11.824 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_1/O
+                         net (fo=64, routed)          3.320    15.143    my_otter/flush_D
+    SLICE_X52Y19         FDRE                                         r  my_otter/IF_DE_reg[IR][11]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 my_otter/EX_MEM_reg[rd_addr][2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            my_otter/IF_DE_reg[IR][8]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        15.128ns  (logic 2.477ns (16.374%)  route 12.651ns (83.626%))
+  Logic Levels:           11  (CARRY4=3 FDRE=1 LUT2=1 LUT3=1 LUT5=2 LUT6=3)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X42Y10         FDRE                         0.000     0.000 r  my_otter/EX_MEM_reg[rd_addr][2]/C
+    SLICE_X42Y10         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  my_otter/EX_MEM_reg[rd_addr][2]/Q
+                         net (fo=5, routed)           1.611     2.129    my_otter/PROGRAM_COUNTER/Q[2]
+    SLICE_X46Y9          LUT6 (Prop_lut6_I5_O)        0.124     2.253 f  my_otter/PROGRAM_COUNTER/result0_carry_i_17/O
+                         net (fo=1, routed)           0.660     2.914    my_otter/PROGRAM_COUNTER/result0_carry_i_17_n_0
+    SLICE_X47Y9          LUT5 (Prop_lut5_I2_O)        0.124     3.038 r  my_otter/PROGRAM_COUNTER/result0_carry_i_9/O
+                         net (fo=32, routed)          1.094     4.132    my_otter/OTTER_REG_FILE/forwardA_E[0]
+    SLICE_X48Y8          LUT5 (Prop_lut5_I2_O)        0.124     4.256 r  my_otter/OTTER_REG_FILE/result0_carry_i_3/O
+                         net (fo=24, routed)          2.561     6.816    my_otter/OTTER_REG_FILE/ALU_forward_muxA[1]
+    SLICE_X41Y10         LUT6 (Prop_lut6_I0_O)        0.124     6.940 r  my_otter/OTTER_REG_FILE/i__carry_i_4__3/O
+                         net (fo=1, routed)           0.000     6.940    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_0[0]
+    SLICE_X41Y10         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.472 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     7.472    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry_n_0
+    SLICE_X41Y11         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.586 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.586    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_n_0
+    SLICE_X41Y12         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     7.814 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__1/CO[2]
+                         net (fo=1, routed)           0.563     8.377    my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4_0[0]
+    SLICE_X37Y13         LUT6 (Prop_lut6_I0_O)        0.313     8.690 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_8/O
+                         net (fo=1, routed)           0.822     9.512    my_otter/OTTER_REG_FILE/branch_conditional_E
+    SLICE_X40Y13         LUT3 (Prop_lut3_I0_O)        0.124     9.636 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4/O
+                         net (fo=35, routed)          2.036    11.672    my_otter/OTTER_REG_FILE/pc_sel
+    SLICE_X37Y19         LUT2 (Prop_lut2_I1_O)        0.152    11.824 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_1/O
+                         net (fo=64, routed)          3.304    15.128    my_otter/flush_D
+    SLICE_X51Y13         FDRE                                         r  my_otter/IF_DE_reg[IR][8]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 my_otter/EX_MEM_reg[rd_addr][2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            my_otter/IF_DE_reg[IR][24]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        15.115ns  (logic 2.477ns (16.388%)  route 12.638ns (83.612%))
+  Logic Levels:           11  (CARRY4=3 FDRE=1 LUT2=1 LUT3=1 LUT5=2 LUT6=3)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X42Y10         FDRE                         0.000     0.000 r  my_otter/EX_MEM_reg[rd_addr][2]/C
+    SLICE_X42Y10         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  my_otter/EX_MEM_reg[rd_addr][2]/Q
+                         net (fo=5, routed)           1.611     2.129    my_otter/PROGRAM_COUNTER/Q[2]
+    SLICE_X46Y9          LUT6 (Prop_lut6_I5_O)        0.124     2.253 f  my_otter/PROGRAM_COUNTER/result0_carry_i_17/O
+                         net (fo=1, routed)           0.660     2.914    my_otter/PROGRAM_COUNTER/result0_carry_i_17_n_0
+    SLICE_X47Y9          LUT5 (Prop_lut5_I2_O)        0.124     3.038 r  my_otter/PROGRAM_COUNTER/result0_carry_i_9/O
+                         net (fo=32, routed)          1.094     4.132    my_otter/OTTER_REG_FILE/forwardA_E[0]
+    SLICE_X48Y8          LUT5 (Prop_lut5_I2_O)        0.124     4.256 r  my_otter/OTTER_REG_FILE/result0_carry_i_3/O
+                         net (fo=24, routed)          2.561     6.816    my_otter/OTTER_REG_FILE/ALU_forward_muxA[1]
+    SLICE_X41Y10         LUT6 (Prop_lut6_I0_O)        0.124     6.940 r  my_otter/OTTER_REG_FILE/i__carry_i_4__3/O
+                         net (fo=1, routed)           0.000     6.940    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_0[0]
+    SLICE_X41Y10         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     7.472 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     7.472    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry_n_0
+    SLICE_X41Y11         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.586 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.586    my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__0_n_0
+    SLICE_X41Y12         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     7.814 r  my_otter/BRANCH_CONDITIONAL/branch2_inferred__1/i__carry__1/CO[2]
+                         net (fo=1, routed)           0.563     8.377    my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4_0[0]
+    SLICE_X37Y13         LUT6 (Prop_lut6_I0_O)        0.313     8.690 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_8/O
+                         net (fo=1, routed)           0.822     9.512    my_otter/OTTER_REG_FILE/branch_conditional_E
+    SLICE_X40Y13         LUT3 (Prop_lut3_I0_O)        0.124     9.636 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_4/O
+                         net (fo=35, routed)          2.036    11.672    my_otter/OTTER_REG_FILE/pc_sel
+    SLICE_X37Y19         LUT2 (Prop_lut2_I1_O)        0.152    11.824 r  my_otter/OTTER_REG_FILE/IF_DE[IR][31]_i_1/O
+                         net (fo=64, routed)          3.292    15.115    my_otter/flush_D
+    SLICE_X50Y16         FDRE                                         r  my_otter/IF_DE_reg[IR][24]/R
   -------------------------------------------------------------------    -------------------
 
 
@@ -869,54 +781,37 @@ Slack:                    inf
 Min Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 my_otter/DE_EX_reg[IR][13]/C
+  Source:                 my_otter/IF_DE_reg[PC][25]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            my_otter/EX_MEM_reg[memRead_size][1]/D
+  Destination:            my_otter/DE_EX_reg[PC][25]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.247ns  (logic 0.128ns (51.816%)  route 0.119ns (48.184%))
+  Data Path Delay:        0.245ns  (logic 0.128ns (52.210%)  route 0.117ns (47.790%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X45Y15         FDRE                         0.000     0.000 r  my_otter/DE_EX_reg[IR][13]/C
-    SLICE_X45Y15         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  my_otter/DE_EX_reg[IR][13]/Q
-                         net (fo=2, routed)           0.119     0.247    my_otter/p_1_in[1]
-    SLICE_X46Y15         FDRE                                         r  my_otter/EX_MEM_reg[memRead_size][1]/D
+    SLICE_X32Y18         FDRE                         0.000     0.000 r  my_otter/IF_DE_reg[PC][25]/C
+    SLICE_X32Y18         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  my_otter/IF_DE_reg[PC][25]/Q
+                         net (fo=1, routed)           0.117     0.245    my_otter/IF_DE_reg[PC][25]
+    SLICE_X32Y19         FDRE                                         r  my_otter/DE_EX_reg[PC][25]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 my_otter/IF_DE_reg[PC][29]/C
+  Source:                 my_otter/IF_DE_reg[PC][26]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            my_otter/DE_EX_reg[PC][29]/D
+  Destination:            my_otter/DE_EX_reg[PC][26]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.251ns  (logic 0.141ns (56.174%)  route 0.110ns (43.826%))
+  Data Path Delay:        0.249ns  (logic 0.128ns (51.466%)  route 0.121ns (48.534%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X41Y26         FDRE                         0.000     0.000 r  my_otter/IF_DE_reg[PC][29]/C
-    SLICE_X41Y26         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  my_otter/IF_DE_reg[PC][29]/Q
-                         net (fo=1, routed)           0.110     0.251    my_otter/IF_DE_reg[PC][29]
-    SLICE_X41Y25         FDRE                                         r  my_otter/DE_EX_reg[PC][29]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 my_otter/IF_DE_reg[PC][31]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            my_otter/DE_EX_reg[PC][31]/D
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.251ns  (logic 0.141ns (56.174%)  route 0.110ns (43.826%))
-  Logic Levels:           1  (FDRE=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X41Y26         FDRE                         0.000     0.000 r  my_otter/IF_DE_reg[PC][31]/C
-    SLICE_X41Y26         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  my_otter/IF_DE_reg[PC][31]/Q
-                         net (fo=1, routed)           0.110     0.251    my_otter/IF_DE_reg[PC][31]
-    SLICE_X41Y25         FDRE                                         r  my_otter/DE_EX_reg[PC][31]/D
+    SLICE_X32Y18         FDRE                         0.000     0.000 r  my_otter/IF_DE_reg[PC][26]/C
+    SLICE_X32Y18         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  my_otter/IF_DE_reg[PC][26]/Q
+                         net (fo=1, routed)           0.121     0.249    my_otter/IF_DE_reg[PC][26]
+    SLICE_X32Y19         FDRE                                         r  my_otter/DE_EX_reg[PC][26]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
@@ -925,117 +820,134 @@ Slack:                    inf
   Destination:            my_otter/MEM_WB_reg[rf_sel][0]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.255ns  (logic 0.141ns (55.385%)  route 0.114ns (44.615%))
+  Data Path Delay:        0.254ns  (logic 0.141ns (55.524%)  route 0.113ns (44.476%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y9          FDRE                         0.000     0.000 r  my_otter/EX_MEM_reg[rf_sel][0]/C
-    SLICE_X40Y9          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  my_otter/EX_MEM_reg[rf_sel][0]/Q
-                         net (fo=1, routed)           0.114     0.255    my_otter/EX_MEM_reg[rf_sel][0]
-    SLICE_X40Y9          FDRE                                         r  my_otter/MEM_WB_reg[rf_sel][0]/D
+    SLICE_X41Y8          FDRE                         0.000     0.000 r  my_otter/EX_MEM_reg[rf_sel][0]/C
+    SLICE_X41Y8          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  my_otter/EX_MEM_reg[rf_sel][0]/Q
+                         net (fo=1, routed)           0.113     0.254    my_otter/EX_MEM_reg[rf_sel][0]
+    SLICE_X40Y8          FDRE                                         r  my_otter/MEM_WB_reg[rf_sel][0]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 my_otter/IF_DE_reg[PC][9]/C
+  Source:                 my_otter/IF_DE_reg[PC][22]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            my_otter/DE_EX_reg[PC][9]/D
+  Destination:            my_otter/DE_EX_reg[PC][22]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.256ns  (logic 0.141ns (55.080%)  route 0.115ns (44.920%))
+  Data Path Delay:        0.256ns  (logic 0.141ns (55.062%)  route 0.115ns (44.938%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X39Y13         FDRE                         0.000     0.000 r  my_otter/IF_DE_reg[PC][9]/C
-    SLICE_X39Y13         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  my_otter/IF_DE_reg[PC][9]/Q
-                         net (fo=1, routed)           0.115     0.256    my_otter/IF_DE_reg[PC][9]
-    SLICE_X40Y13         FDRE                                         r  my_otter/DE_EX_reg[PC][9]/D
+    SLICE_X35Y21         FDRE                         0.000     0.000 r  my_otter/IF_DE_reg[PC][22]/C
+    SLICE_X35Y21         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  my_otter/IF_DE_reg[PC][22]/Q
+                         net (fo=1, routed)           0.115     0.256    my_otter/IF_DE_reg[PC][22]
+    SLICE_X32Y20         FDRE                                         r  my_otter/DE_EX_reg[PC][22]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 my_otter/IF_DE_reg[PC][1]/C
+  Source:                 my_otter/IF_DE_reg[PC][17]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            my_otter/DE_EX_reg[PC][1]/D
+  Destination:            my_otter/DE_EX_reg[PC][17]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.260ns  (logic 0.141ns (54.139%)  route 0.119ns (45.861%))
+  Data Path Delay:        0.258ns  (logic 0.141ns (54.624%)  route 0.117ns (45.376%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y15         FDRE                         0.000     0.000 r  my_otter/IF_DE_reg[PC][1]/C
-    SLICE_X40Y15         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  my_otter/IF_DE_reg[PC][1]/Q
-                         net (fo=1, routed)           0.119     0.260    my_otter/IF_DE_reg[PC][1]
-    SLICE_X40Y14         FDRE                                         r  my_otter/DE_EX_reg[PC][1]/D
+    SLICE_X32Y18         FDRE                         0.000     0.000 r  my_otter/IF_DE_reg[PC][17]/C
+    SLICE_X32Y18         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  my_otter/IF_DE_reg[PC][17]/Q
+                         net (fo=1, routed)           0.117     0.258    my_otter/IF_DE_reg[PC][17]
+    SLICE_X32Y17         FDRE                                         r  my_otter/DE_EX_reg[PC][17]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 my_otter/PROGRAM_COUNTER/data_out_reg[17]/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            my_otter/IF_DE_reg[PC][17]/D
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.261ns  (logic 0.141ns (54.054%)  route 0.120ns (45.946%))
-  Logic Levels:           1  (FDCE=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X40Y23         FDCE                         0.000     0.000 r  my_otter/PROGRAM_COUNTER/data_out_reg[17]/C
-    SLICE_X40Y23         FDCE (Prop_fdce_C_Q)         0.141     0.141 r  my_otter/PROGRAM_COUNTER/data_out_reg[17]/Q
-                         net (fo=2, routed)           0.120     0.261    my_otter/data_out_reg[17]
-    SLICE_X41Y23         FDRE                                         r  my_otter/IF_DE_reg[PC][17]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 my_otter/PROGRAM_COUNTER/data_out_reg[21]/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            my_otter/IF_DE_reg[PC][21]/D
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.261ns  (logic 0.141ns (54.054%)  route 0.120ns (45.946%))
-  Logic Levels:           1  (FDCE=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X40Y24         FDCE                         0.000     0.000 r  my_otter/PROGRAM_COUNTER/data_out_reg[21]/C
-    SLICE_X40Y24         FDCE (Prop_fdce_C_Q)         0.141     0.141 r  my_otter/PROGRAM_COUNTER/data_out_reg[21]/Q
-                         net (fo=2, routed)           0.120     0.261    my_otter/data_out_reg[21]
-    SLICE_X41Y24         FDRE                                         r  my_otter/IF_DE_reg[PC][21]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 my_otter/DE_EX_reg[PC][14]/C
+  Source:                 my_otter/IF_DE_reg[PC][20]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            my_otter/EX_MEM_reg[PC][14]/D
+  Destination:            my_otter/DE_EX_reg[PC][20]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.265ns  (logic 0.141ns (53.133%)  route 0.124ns (46.867%))
+  Data Path Delay:        0.259ns  (logic 0.141ns (54.488%)  route 0.118ns (45.512%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X39Y16         FDRE                         0.000     0.000 r  my_otter/DE_EX_reg[PC][14]/C
-    SLICE_X39Y16         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  my_otter/DE_EX_reg[PC][14]/Q
-                         net (fo=3, routed)           0.124     0.265    my_otter/DE_EX_reg[PC][14]
-    SLICE_X38Y17         FDRE                                         r  my_otter/EX_MEM_reg[PC][14]/D
+    SLICE_X32Y18         FDRE                         0.000     0.000 r  my_otter/IF_DE_reg[PC][20]/C
+    SLICE_X32Y18         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  my_otter/IF_DE_reg[PC][20]/Q
+                         net (fo=1, routed)           0.118     0.259    my_otter/IF_DE_reg[PC][20]
+    SLICE_X32Y17         FDRE                                         r  my_otter/DE_EX_reg[PC][20]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 my_otter/PROGRAM_COUNTER/data_out_reg[31]/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            my_otter/IF_DE_reg[PC][31]/D
+  Source:                 my_otter/DE_EX_reg[PC][30]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            my_otter/EX_MEM_reg[PC][30]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.271ns  (logic 0.141ns (52.006%)  route 0.130ns (47.994%))
-  Logic Levels:           1  (FDCE=1)
+  Data Path Delay:        0.259ns  (logic 0.128ns (49.436%)  route 0.131ns (50.564%))
+  Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y26         FDCE                         0.000     0.000 r  my_otter/PROGRAM_COUNTER/data_out_reg[31]/C
-    SLICE_X40Y26         FDCE (Prop_fdce_C_Q)         0.141     0.141 r  my_otter/PROGRAM_COUNTER/data_out_reg[31]/Q
-                         net (fo=2, routed)           0.130     0.271    my_otter/data_out_reg[31]
-    SLICE_X41Y26         FDRE                                         r  my_otter/IF_DE_reg[PC][31]/D
+    SLICE_X32Y19         FDRE                         0.000     0.000 r  my_otter/DE_EX_reg[PC][30]/C
+    SLICE_X32Y19         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  my_otter/DE_EX_reg[PC][30]/Q
+                         net (fo=3, routed)           0.131     0.259    my_otter/DE_EX_reg[PC][30]
+    SLICE_X33Y18         FDRE                                         r  my_otter/EX_MEM_reg[PC][30]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 my_otter/IF_DE_reg[PC][14]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            my_otter/DE_EX_reg[PC][14]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.259ns  (logic 0.141ns (54.389%)  route 0.118ns (45.611%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X35Y15         FDRE                         0.000     0.000 r  my_otter/IF_DE_reg[PC][14]/C
+    SLICE_X35Y15         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  my_otter/IF_DE_reg[PC][14]/Q
+                         net (fo=1, routed)           0.118     0.259    my_otter/IF_DE_reg[PC][14]
+    SLICE_X30Y15         FDRE                                         r  my_otter/DE_EX_reg[PC][14]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 my_otter/EX_MEM_reg[rf_sel][1]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            my_otter/MEM_WB_reg[rf_sel][1]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.260ns  (logic 0.141ns (54.332%)  route 0.119ns (45.668%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y8          FDRE                         0.000     0.000 r  my_otter/EX_MEM_reg[rf_sel][1]/C
+    SLICE_X41Y8          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  my_otter/EX_MEM_reg[rf_sel][1]/Q
+                         net (fo=1, routed)           0.119     0.260    my_otter/EX_MEM_reg[rf_sel][1]
+    SLICE_X39Y8          FDRE                                         r  my_otter/MEM_WB_reg[rf_sel][1]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 my_otter/IF_DE_reg[PC][16]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            my_otter/DE_EX_reg[PC][16]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.262ns  (logic 0.141ns (53.831%)  route 0.121ns (46.169%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X35Y18         FDRE                         0.000     0.000 r  my_otter/IF_DE_reg[PC][16]/C
+    SLICE_X35Y18         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  my_otter/IF_DE_reg[PC][16]/Q
+                         net (fo=1, routed)           0.121     0.262    my_otter/IF_DE_reg[PC][16]
+    SLICE_X32Y17         FDRE                                         r  my_otter/DE_EX_reg[PC][16]/D
   -------------------------------------------------------------------    -------------------
 
 
