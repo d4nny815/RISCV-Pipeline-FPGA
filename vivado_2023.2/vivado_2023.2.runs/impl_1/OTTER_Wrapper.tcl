@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "/home/danny/Documents/HDL/pipeline_riscv/vivado_2023.2/vivado_2023.2.runs/impl_1/OTTER_Wrapper.tcl"
+  variable script "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/impl_1/OTTER_Wrapper.tcl"
   variable category "vivado_impl"
 }
 
@@ -122,24 +122,23 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 1
-  set_param xicom.use_bs_reader 1
-  set_param runs.launchOptions { -jobs 2  }
+  set_param chipscope.maxJobs 3
+  set_param runs.launchOptions { -jobs 4  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a35tcpg236-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /home/danny/Documents/HDL/pipeline_riscv/vivado_2023.2/vivado_2023.2.cache/wt [current_project]
-  set_property parent.project_path /home/danny/Documents/HDL/pipeline_riscv/vivado_2023.2/vivado_2023.2.xpr [current_project]
-  set_property ip_output_repo /home/danny/Documents/HDL/pipeline_riscv/vivado_2023.2/vivado_2023.2.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.cache/wt [current_project]
+  set_property parent.project_path C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.xpr [current_project]
+  set_property ip_output_repo C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /home/danny/Documents/HDL/pipeline_riscv/vivado_2023.2/vivado_2023.2.runs/synth_1/OTTER_Wrapper.dcp
+  add_files -quiet C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1/OTTER_Wrapper.dcp
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/danny/Documents/HDL/pipeline_riscv/constraints/Basys_Master_v1_03.xdc
+  read_xdc C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/constraints/Basys_Master_v1_03.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }

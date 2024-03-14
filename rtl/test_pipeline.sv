@@ -22,16 +22,6 @@
 
 module test_pipeline();
     logic clk, rst;
-    
-    // OTTER_MCU DUT (
-    //     .CLK        (clk),
-    //     .RESET      (rst),
-    //     .INTR       (1'b0),
-    //     .IOBUS_IN   (32'b0),
-    //     .IOBUS_OUT  (),
-    //     .IOBUS_ADDR (), 
-    //     .IOBUS_WR   () 
-    // );
 
     logic [15:0] leds;
     logic [4:0] btns;
@@ -49,16 +39,15 @@ module test_pipeline();
     assign btns[4] = rst;
 
     always begin
-    #10 clk = ~clk; 
+    #20 clk = ~clk; 
     end  
 
 
     initial begin
-        clk = 0; rst = 0;
-        // #5;
-        // rst = 1'b1;
-        // #6;
-        // rst = 1'b0;
+        clk = 0; rst = 1;
+        # 100;
+        rst = 0;
+
         #1000;
         $finish;
     end

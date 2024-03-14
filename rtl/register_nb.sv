@@ -29,8 +29,7 @@ module reg_nb #(parameter n=8) (
     output logic [n-1:0] data_out  
     ); 
 
-    // change to async reset
-    always_ff @(posedge clk or posedge clr) begin
+    always_ff @(posedge clk) begin
         if (clr == 1'b1) begin
             data_out <= 0;
         end

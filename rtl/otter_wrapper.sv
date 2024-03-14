@@ -1,12 +1,11 @@
-`timescale 1ns / 1ps
- 
+
  module OTTER_Wrapper(   
     input clk,              // 100 MHz clock
     input [4:0] buttons,  
     input [15:0] switches,   
     output logic [15:0] leds,
     output logic [7:0] segs,   
-    output logic [3:0] an   
+    output logic [3:0] an    
     ); 
          
     //- INPUT PORT IDS ---------------------------------------------------------
@@ -21,10 +20,10 @@
     //- Signals for connecting OTTER_MCU to OTTER_wrapper 
     logic s_interrupt;  
     logic s_reset;
-    logic reset;           
-    logic CLK_50MHz = 0;            // 50 MHz clock
- 
-    logic [31:0] IOBUS_out;
+    logic reset;
+//    logic CLK_50MHz;           
+    logic CLK_50MHz = 0;           
+    logic [31:0] IOBUS_out; 
     logic [31:0] IOBUS_in;   
     logic [31:0] IOBUS_addr;  
     logic IOBUS_wr;   
@@ -34,28 +33,27 @@
     logic [15:0] r_leds;   //  register for LEDs
     logic [3:0]  r_an;     //  register for display enables (anodes)
    
-
     
     assign s_interrupt = buttons[3];  // for btn(4) connecting to interrupt. Bottom button
     assign s_reset = buttons[4];      // for btn(3) connecting to reset
-     
+
     //- Instantiate RISC-V OTTER MCU 
     OTTER_MCU my_otter(
         .CLK        (CLK_50MHz),
         .INTR       (1'b0),
-        .RESET      (s_reset | reset),  
+        .RESET      (s_reset | reset), 
         .IOBUS_IN   (IOBUS_in),  
         .IOBUS_OUT  (IOBUS_out),  
         .IOBUS_ADDR (IOBUS_addr),
         .IOBUS_WR   (IOBUS_wr)
     );
 
-    //- Divide clk by 2 
-    always_ff @ (posedge clk)
+    always_ff @(posedge clk) 
         CLK_50MHz <= ~CLK_50MHz;
+      
    
     //- Drive dev board output devices with registers 
-    always_ff @ (posedge CLK_50MHz) begin
+    always_ff @ (posedge clk) begin
         if (IOBUS_wr == 1) begin 
             case(IOBUS_addr)
                 LEDS_PORT_ADDR:   r_leds <= IOBUS_out[15:0];    
@@ -70,7 +68,7 @@
     //- IOBUS_addr is the select signal to the MUX
     always_comb begin
         IOBUS_in = 32'b0; 
-        case(IOBUS_addr)
+        case(IOBUS_addr) 
             BUTTONS_PORT_ADDR:      IOBUS_in[4:0] = buttons;
             SWITCHES_PORT_ADDR:     IOBUS_in[15:0] = switches;
             default:                IOBUS_in = 32'b0;
@@ -80,24 +78,36 @@
     //- assign registered outputs to actual outputs 
     assign leds = r_leds;  
     assign segs = r_segs; 
-    assign an = r_an;     
-
+    assign an = r_an;   
     
-    typedef enum logic {
+    typedef enum logic [1:0] {
         INIT,
-        RUNNING 
+        STARTUP,
+        RUNNING
     } state_t;
 
     state_t PS, NS;
-    always_ff @(posedge CLK_50MHz) begin
-        PS <= NS;
+    
+    always_ff @(posedge clk) begin
+        if (s_reset) begin
+            PS <= INIT;
+        end
+        else begin
+            PS <= NS;
+        end
     end
+
 
     always_comb begin
         reset = 1'b0;
         case(PS)
             INIT: begin
-                reset = 1'b1; 
+                reset = 1'b1;
+                NS = STARTUP; 
+            end
+            
+            STARTUP: begin
+                reset = 1'b1;
                 NS = RUNNING;
             end
 

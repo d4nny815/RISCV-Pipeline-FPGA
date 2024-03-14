@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/danny/Documents/HDL/pipeline_riscv/vivado_2023.2/vivado_2023.2.runs/synth_1/OTTER_Wrapper.tcl"
+  variable script "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1/OTTER_Wrapper.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,35 +70,33 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 1
-set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /home/danny/Documents/HDL/pipeline_riscv/vivado_2023.2/vivado_2023.2.cache/wt [current_project]
-set_property parent.project_path /home/danny/Documents/HDL/pipeline_riscv/vivado_2023.2/vivado_2023.2.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.cache/wt [current_project]
+set_property parent.project_path C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo /home/danny/Documents/HDL/pipeline_riscv/vivado_2023.2/vivado_2023.2.cache/ip [current_project]
+set_property ip_output_repo c:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_mem /home/danny/Documents/HDL/pipeline_riscv/programs/otter_memory.mem
+read_mem C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/programs/otter_memory.mem
 read_verilog -library xil_defaultlib -sv {
-  /home/danny/Documents/HDL/pipeline_riscv/rtl/Branch_cond_gen.sv
-  /home/danny/Documents/HDL/pipeline_riscv/rtl/alu.sv
-  /home/danny/Documents/HDL/pipeline_riscv/rtl/control_unit.sv
-  /home/danny/Documents/HDL/pipeline_riscv/rtl/hazard.sv
-  /home/danny/Documents/HDL/pipeline_riscv/rtl/immed_gen.sv
-  /home/danny/Documents/HDL/pipeline_riscv/rtl/structs.sv
-  /home/danny/Documents/HDL/pipeline_riscv/rtl/otter_mcu.sv
-  /home/danny/Documents/HDL/pipeline_riscv/rtl/otter_memory.sv
-  /home/danny/Documents/HDL/pipeline_riscv/rtl/reg_file.sv
-  /home/danny/Documents/HDL/pipeline_riscv/rtl/register_nb.sv
-  /home/danny/Documents/HDL/pipeline_riscv/rtl/otter_wrapper.sv
+  C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/Branch_cond_gen.sv
+  C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/alu.sv
+  C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/control_unit.sv
+  C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/hazard.sv
+  C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/immed_gen.sv
+  C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/structs.sv
+  C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_mcu.sv
+  C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_memory.sv
+  C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/reg_file.sv
+  C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/register_nb.sv
+  C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_wrapper.sv
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -109,12 +107,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/danny/Documents/HDL/pipeline_riscv/constraints/Basys_Master_v1_03.xdc
-set_property used_in_implementation false [get_files /home/danny/Documents/HDL/pipeline_riscv/constraints/Basys_Master_v1_03.xdc]
+read_xdc C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/constraints/Basys_Master_v1_03.xdc
+set_property used_in_implementation false [get_files C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/constraints/Basys_Master_v1_03.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental /home/danny/Documents/HDL/pipeline_riscv/vivado_2023.2/vivado_2023.2.srcs/utils_1/imports/synth_1/OTTER_MCU.dcp
+read_checkpoint -auto_incremental -incremental C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.srcs/utils_1/imports/synth_1/OTTER_MCU.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

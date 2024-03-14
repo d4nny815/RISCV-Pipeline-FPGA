@@ -1,15 +1,15 @@
 Vivado Simulator v2023.2
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: /tools/Xilinx/Vivado/2023.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot test_pipeline_behav xil_defaultlib.test_pipeline xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot test_pipeline_behav xil_defaultlib.test_pipeline xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [/home/danny/Documents/HDL/pipeline_riscv/rtl/control_unit.sv:30]
-WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [/home/danny/Documents/HDL/pipeline_riscv/rtl/Branch_cond_gen.sv:46]
-WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [/home/danny/Documents/HDL/pipeline_riscv/rtl/alu.sv:44]
+WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/control_unit.sv:30]
+WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/Branch_cond_gen.sv:46]
+WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/alu.sv:44]
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling package xil_defaultlib.structs

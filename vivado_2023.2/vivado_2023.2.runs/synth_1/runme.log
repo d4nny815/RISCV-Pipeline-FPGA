@@ -3,17 +3,19 @@
     with args -log OTTER_Wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source OTTER_Wrapper.tcl
 
 
+ECHO is off.
+ECHO is off.
+
 ****** Vivado v2023.2 (64-bit)
-  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
   **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
   **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source OTTER_Wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1277.469 ; gain = 5.961 ; free physical = 5772 ; free virtual = 24796
-Command: read_checkpoint -auto_incremental -incremental /home/danny/Documents/HDL/pipeline_riscv/vivado_2023.2/vivado_2023.2.srcs/utils_1/imports/synth_1/OTTER_MCU.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from /home/danny/Documents/HDL/pipeline_riscv/vivado_2023.2/vivado_2023.2.srcs/utils_1/imports/synth_1/OTTER_MCU.dcp for incremental synthesis
+Command: read_checkpoint -auto_incremental -incremental C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.srcs/utils_1/imports/synth_1/OTTER_MCU.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.srcs/utils_1/imports/synth_1/OTTER_MCU.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top OTTER_Wrapper -part xc7a35tcpg236-1
 Starting synth_design
@@ -22,85 +24,86 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
-INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 759401
+INFO: [Synth 8-7075] Helper process launched with PID 31984
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2018.160 ; gain = 404.715 ; free physical = 4782 ; free virtual = 23804
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1337.938 ; gain = 441.199
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'OTTER_Wrapper' [/home/danny/Documents/HDL/pipeline_riscv/rtl/otter_wrapper.sv:3]
-INFO: [Synth 8-6157] synthesizing module 'OTTER_MCU' [/home/danny/Documents/HDL/pipeline_riscv/rtl/otter_mcu.sv:3]
-INFO: [Synth 8-6157] synthesizing module 'reg_nb' [/home/danny/Documents/HDL/pipeline_riscv/rtl/register_nb.sv:24]
+INFO: [Synth 8-6157] synthesizing module 'OTTER_Wrapper' [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_wrapper.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'OTTER_MCU' [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_mcu.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'reg_nb' [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/register_nb.sv:24]
 	Parameter n bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'reg_nb' (0#1) [/home/danny/Documents/HDL/pipeline_riscv/rtl/register_nb.sv:24]
-INFO: [Synth 8-6157] synthesizing module 'Memory' [/home/danny/Documents/HDL/pipeline_riscv/rtl/otter_memory.sv:47]
-INFO: [Synth 8-3876] $readmem data file 'otter_memory.mem' is read successfully [/home/danny/Documents/HDL/pipeline_riscv/rtl/otter_memory.sv:72]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/danny/Documents/HDL/pipeline_riscv/rtl/otter_memory.sv:94]
-INFO: [Synth 8-6155] done synthesizing module 'Memory' (0#1) [/home/danny/Documents/HDL/pipeline_riscv/rtl/otter_memory.sv:47]
-INFO: [Synth 8-6157] synthesizing module 'ControlUnit' [/home/danny/Documents/HDL/pipeline_riscv/rtl/control_unit.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'ControlUnit' (0#1) [/home/danny/Documents/HDL/pipeline_riscv/rtl/control_unit.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'ImmedGen' [/home/danny/Documents/HDL/pipeline_riscv/rtl/immed_gen.sv:27]
-INFO: [Synth 8-6155] done synthesizing module 'ImmedGen' (0#1) [/home/danny/Documents/HDL/pipeline_riscv/rtl/immed_gen.sv:27]
-INFO: [Synth 8-6157] synthesizing module 'RegFile' [/home/danny/Documents/HDL/pipeline_riscv/rtl/reg_file.sv:37]
-INFO: [Synth 8-6155] done synthesizing module 'RegFile' (0#1) [/home/danny/Documents/HDL/pipeline_riscv/rtl/reg_file.sv:37]
-INFO: [Synth 8-6157] synthesizing module 'BranchCondGen' [/home/danny/Documents/HDL/pipeline_riscv/rtl/Branch_cond_gen.sv:28]
-INFO: [Synth 8-6155] done synthesizing module 'BranchCondGen' (0#1) [/home/danny/Documents/HDL/pipeline_riscv/rtl/Branch_cond_gen.sv:28]
-INFO: [Synth 8-226] default block is never used [/home/danny/Documents/HDL/pipeline_riscv/rtl/otter_mcu.sv:211]
-INFO: [Synth 8-6157] synthesizing module 'ALU' [/home/danny/Documents/HDL/pipeline_riscv/rtl/alu.sv:23]
-INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [/home/danny/Documents/HDL/pipeline_riscv/rtl/alu.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'HazardUnit' [/home/danny/Documents/HDL/pipeline_riscv/rtl/hazard.sv:3]
-INFO: [Synth 8-6155] done synthesizing module 'HazardUnit' (0#1) [/home/danny/Documents/HDL/pipeline_riscv/rtl/hazard.sv:3]
-INFO: [Synth 8-6155] done synthesizing module 'OTTER_MCU' (0#1) [/home/danny/Documents/HDL/pipeline_riscv/rtl/otter_mcu.sv:3]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/danny/Documents/HDL/pipeline_riscv/rtl/otter_wrapper.sv:60]
-INFO: [Synth 8-226] default block is never used [/home/danny/Documents/HDL/pipeline_riscv/rtl/otter_wrapper.sv:98]
-INFO: [Synth 8-6155] done synthesizing module 'OTTER_Wrapper' (0#1) [/home/danny/Documents/HDL/pipeline_riscv/rtl/otter_wrapper.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'reg_nb' (0#1) [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/register_nb.sv:24]
+INFO: [Synth 8-6157] synthesizing module 'Memory' [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_memory.sv:47]
+INFO: [Synth 8-3876] $readmem data file 'otter_memory.mem' is read successfully [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_memory.sv:72]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_memory.sv:94]
+INFO: [Synth 8-6155] done synthesizing module 'Memory' (0#1) [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_memory.sv:47]
+INFO: [Synth 8-6157] synthesizing module 'ControlUnit' [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/control_unit.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'ControlUnit' (0#1) [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/control_unit.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ImmedGen' [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/immed_gen.sv:27]
+INFO: [Synth 8-6155] done synthesizing module 'ImmedGen' (0#1) [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/immed_gen.sv:27]
+INFO: [Synth 8-6157] synthesizing module 'RegFile' [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/reg_file.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'RegFile' (0#1) [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/reg_file.sv:37]
+INFO: [Synth 8-6157] synthesizing module 'BranchCondGen' [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/Branch_cond_gen.sv:28]
+INFO: [Synth 8-6155] done synthesizing module 'BranchCondGen' (0#1) [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/Branch_cond_gen.sv:28]
+INFO: [Synth 8-226] default block is never used [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_mcu.sv:202]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/alu.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/alu.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'HazardUnit' [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/hazard.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'HazardUnit' (0#1) [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/hazard.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'OTTER_MCU' (0#1) [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_mcu.sv:3]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_wrapper.sv:58]
+INFO: [Synth 8-6155] done synthesizing module 'OTTER_Wrapper' (0#1) [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_wrapper.sv:2]
 WARNING: [Synth 8-7129] Port INTR in module OTTER_MCU is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2109.129 ; gain = 495.684 ; free physical = 4656 ; free virtual = 23679
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1462.176 ; gain = 565.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2118.035 ; gain = 504.590 ; free physical = 4655 ; free virtual = 23679
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1462.176 ; gain = 565.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2118.035 ; gain = 504.590 ; free physical = 4655 ; free virtual = 23679
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1462.176 ; gain = 565.438
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2118.035 ; gain = 0.000 ; free physical = 4655 ; free virtual = 23678
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1462.176 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/danny/Documents/HDL/pipeline_riscv/constraints/Basys_Master_v1_03.xdc]
-Finished Parsing XDC File [/home/danny/Documents/HDL/pipeline_riscv/constraints/Basys_Master_v1_03.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/danny/Documents/HDL/pipeline_riscv/constraints/Basys_Master_v1_03.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/OTTER_Wrapper_propImpl.xdc].
+Parsing XDC File [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/constraints/Basys_Master_v1_03.xdc]
+Finished Parsing XDC File [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/constraints/Basys_Master_v1_03.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/constraints/Basys_Master_v1_03.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/OTTER_Wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/OTTER_Wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2268.785 ; gain = 0.000 ; free physical = 4644 ; free virtual = 23667
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1561.004 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2268.820 ; gain = 0.000 ; free physical = 4644 ; free virtual = 23667
+The system cannot find the path specified.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1561.004 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2268.820 ; gain = 655.375 ; free physical = 4614 ; free virtual = 23638
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1561.004 ; gain = 664.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2268.820 ; gain = 655.375 ; free physical = 4614 ; free virtual = 23638
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1561.004 ; gain = 664.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2268.820 ; gain = 655.375 ; free physical = 4611 ; free virtual = 23634
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1561.004 ; gain = 664.266
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'PS_reg' in module 'OTTER_Wrapper'
 INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 32 for RAM "Memory:/memory_reg"
 INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 32 for RAM "Memory:/memory_reg"
 INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 32 for RAM "Memory:/memory_reg"
@@ -117,8 +120,16 @@ INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of 
 INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 32 for RAM "Memory:/memory_reg"
 INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 32 for RAM "Memory:/memory_reg"
 INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 32 for RAM "Memory:/memory_reg"
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    INIT |                              001 |                               00
+                 STARTUP |                              010 |                               01
+                 RUNNING |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'PS_reg' using encoding 'one-hot' in module 'OTTER_Wrapper'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2268.820 ; gain = 655.375 ; free physical = 4607 ; free virtual = 23631
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1561.004 ; gain = 664.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -136,7 +147,7 @@ Detailed RTL Component Info :
 	                5 Bit    Registers := 5     
 	                4 Bit    Registers := 2     
 	                2 Bit    Registers := 4     
-	                1 Bit    Registers := 13    
+	                1 Bit    Registers := 12    
 +---RAMs : 
 	             512K Bit	(16384 X 32 bit)          RAMs := 1     
 	             1024 Bit	(32 X 32 bit)          RAMs := 1     
@@ -149,13 +160,15 @@ Detailed RTL Component Info :
 	   2 Input    4 Bit        Muxes := 1     
 	  10 Input    4 Bit        Muxes := 1     
 	  10 Input    3 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 1     
 	  10 Input    2 Bit        Muxes := 1     
 	   3 Input    2 Bit        Muxes := 3     
 	   9 Input    1 Bit        Muxes := 1     
 	  10 Input    1 Bit        Muxes := 6     
 	   6 Input    1 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 3     
 	   4 Input    1 Bit        Muxes := 3     
+	   3 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -190,8 +203,9 @@ INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of 
 INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 32 for RAM "OTTER_Wrapper/my_otter/OTTER_MEMORY/memory_reg"
 INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 32 for RAM "OTTER_Wrapper/my_otter/OTTER_MEMORY/memory_reg"
 INFO: [Synth 8-3971] The signal "OTTER_Wrapper/my_otter/OTTER_REG_FILE/reg_file_reg" was recognized as a true dual port RAM template.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_PS_reg[2]) is unused and will be removed from module OTTER_Wrapper.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2268.820 ; gain = 655.375 ; free physical = 4344 ; free virtual = 23381
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1561.004 ; gain = 664.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -212,13 +226,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2268.820 ; gain = 655.375 ; free physical = 4490 ; free virtual = 23444
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1561.004 ; gain = 664.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:49 . Memory (MB): peak = 2268.820 ; gain = 655.375 ; free physical = 4443 ; free virtual = 23381
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1561.004 ; gain = 664.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -272,7 +286,7 @@ INFO: [Synth 8-7052] The timing for the instance my_otter/OTTER_MEMORY/memory_re
 INFO: [Synth 8-7052] The timing for the instance my_otter/OTTER_REG_FILE/reg_file_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance my_otter/OTTER_REG_FILE/reg_file_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:50 ; elapsed = 00:00:50 . Memory (MB): peak = 2268.820 ; gain = 655.375 ; free physical = 4393 ; free virtual = 23330
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1561.004 ; gain = 664.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -290,37 +304,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 2268.820 ; gain = 655.375 ; free physical = 4398 ; free virtual = 23312
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1561.004 ; gain = 664.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 2268.820 ; gain = 655.375 ; free physical = 4398 ; free virtual = 23312
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1561.004 ; gain = 664.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 2268.820 ; gain = 655.375 ; free physical = 4398 ; free virtual = 23312
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1561.004 ; gain = 664.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 2268.820 ; gain = 655.375 ; free physical = 4398 ; free virtual = 23312
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1561.004 ; gain = 664.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 2268.820 ; gain = 655.375 ; free physical = 4398 ; free virtual = 23312
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1561.004 ; gain = 664.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 2268.820 ; gain = 655.375 ; free physical = 4398 ; free virtual = 23312
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1561.004 ; gain = 664.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -339,44 +353,42 @@ Report Cell Usage:
 |1     |BUFG     |     2|
 |2     |CARRY4   |    59|
 |3     |LUT1     |     3|
-|4     |LUT2     |   124|
-|5     |LUT3     |    91|
-|6     |LUT4     |   273|
-|7     |LUT5     |   298|
-|8     |LUT6     |   652|
+|4     |LUT2     |   108|
+|5     |LUT3     |    92|
+|6     |LUT4     |   263|
+|7     |LUT5     |   320|
+|8     |LUT6     |   668|
 |9     |MUXF7    |   128|
 |10    |MUXF8    |    64|
 |11    |RAMB18E1 |     2|
 |12    |RAMB36E1 |    16|
-|14    |FDCE     |    32|
-|15    |FDRE     |   464|
-|16    |IBUF     |    22|
-|17    |OBUF     |    28|
+|14    |FDRE     |   498|
+|15    |IBUF     |    22|
+|16    |OBUF     |    28|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 2268.820 ; gain = 655.375 ; free physical = 4398 ; free virtual = 23312
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1561.004 ; gain = 664.266
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:52 ; elapsed = 00:00:52 . Memory (MB): peak = 2268.820 ; gain = 504.590 ; free physical = 4398 ; free virtual = 23312
-Synthesis Optimization Complete : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 2268.820 ; gain = 655.375 ; free physical = 4398 ; free virtual = 23312
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1561.004 ; gain = 565.438
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1561.004 ; gain = 664.266
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2268.820 ; gain = 0.000 ; free physical = 4681 ; free virtual = 23603
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1561.004 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 269 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 34 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2276.785 ; gain = 0.000 ; free physical = 4757 ; free virtual = 23687
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1561.004 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 60c21488
+The system cannot find the path specified.
+Synth Design complete | Checksum: 125a31f6
 INFO: [Common 17-83] Releasing license: Synthesis
-113 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+114 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:05 ; elapsed = 00:01:00 . Memory (MB): peak = 2276.820 ; gain = 995.383 ; free physical = 4782 ; free virtual = 23712
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1871.784; main = 1541.526; forked = 378.262
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3233.973; main = 2276.789; forked = 989.199
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2300.797 ; gain = 0.000 ; free physical = 4782 ; free virtual = 23712
-INFO: [Common 17-1381] The checkpoint '/home/danny/Documents/HDL/pipeline_riscv/vivado_2023.2/vivado_2023.2.runs/synth_1/OTTER_Wrapper.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1561.004 ; gain = 1054.660
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1561.004 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1/OTTER_Wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file OTTER_Wrapper_utilization_synth.rpt -pb OTTER_Wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Mar 12 11:56:04 2024...
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 13 21:40:31 2024...

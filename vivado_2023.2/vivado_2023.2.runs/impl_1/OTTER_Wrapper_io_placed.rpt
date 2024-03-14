@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version              : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
-| Date                      : Tue Mar 12 11:56:52 2024
-| Host                      : framework13 running 64-bit Ubuntu 22.04.4 LTS
+| Tool Version              : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date                      : Wed Mar 13 21:41:00 2024
+| Host                      : RaijinPC running 64-bit major release  (build 9200)
 | Command                   : report_io -file OTTER_Wrapper_io_placed.rpt
 | Design                    : OTTER_Wrapper
 | Device                    : xc7a35t
