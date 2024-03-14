@@ -3,10 +3,10 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Wed Mar 13 21:38:19 2024
-# Process ID: 31392
+# Start of session at: Thu Mar 14 13:28:39 2024
+# Process ID: 15932
 # Current directory: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent31268 C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\vivado_2023.2\vivado_2023.2.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12132 C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\vivado_2023.2\vivado_2023.2.xpr
 # Log file: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado.log
 # Journal file: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2\vivado.jou
 # Running On: RaijinPC, OS: Windows, CPU Frequency: 4200 MHz, CPU Physical cores: 32, Host memory: 33457 MB
@@ -70,21 +70,46 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 avail
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at C:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
 INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.gen/sources_1'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv'.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
-open_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1665.875 ; gain = 466.746
+open_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1548.340 ; gain = 378.516
 update_compile_order -fileset sources_1
-set_property is_enabled false [get_files  C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv]
+set_property is_enabled true [get_files  C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv]
 update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_wrapper.sv] -no_script -reset -force -quiet
+remove_files  C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_wrapper.sv
+add_files -norecurse {C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/univ_sseg.v C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/clk_2n_div.v}
 reset_run synth_1
 INFO: [Project 1-1161] Replacing file C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.srcs/utils_1/imports/synth_1/OTTER_MCU.dcp with file C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1/OTTER_Wrapper.dcp
 launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Wed Mar 13 21:39:56 2024] Launched synth_1...
+[Thu Mar 14 13:31:36 2024] Launched synth_1...
 Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1/runme.log
-[Wed Mar 13 21:39:56 2024] Launched impl_1...
+[Thu Mar 14 13:31:36 2024] Launched impl_1...
+Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/impl_1/runme.log
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Mar 14 13:33:06 2024] Launched synth_1...
+Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1/runme.log
+[Thu Mar 14 13:33:06 2024] Launched impl_1...
+Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/impl_1/runme.log
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Mar 14 13:33:36 2024] Launched synth_1...
+Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1/runme.log
+[Thu Mar 14 13:33:36 2024] Launched impl_1...
 Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/impl_1/runme.log
 open_hw_manager
 connect_hw_server -allow_non_jtag
@@ -114,7 +139,7 @@ ECHO is off.
 
 
 
-connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 1724.594 ; gain = 0.000
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 1652.836 ; gain = 0.000
 open_hw_target
 INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183B5A835A
 set_property PROGRAM.FILE {C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/impl_1/OTTER_Wrapper.bit} [get_hw_devices xc7a35t_0]
@@ -128,15 +153,777 @@ program_hw_devices [get_hw_devices xc7a35t_0]
 INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
 INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-export_ip_user_files -of_objects  [get_files C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/sseg_driver.v] -no_script -reset -force -quiet
-export_ip_user_files -of_objects  [get_files C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/clk_div.sv] -no_script -reset -force -quiet
-remove_files  {C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/sseg_driver.v C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/clk_div.sv}
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_wrapper.sv:]
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183B5A835A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183B5A835A
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
 WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
 ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\test_pipeline.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
 WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\test_pipeline.sv:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_wrapper.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_pipeline'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_pipeline' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim/otter_memory.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj test_pipeline_vlog.prj"
+ECHO is off.
+ECHO is off.
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/clk_2n_div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_2n_div_test
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/univ_sseg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module univ_sseg
+INFO: [VRFC 10-311] analyzing module clk_divder
+INFO: [VRFC 10-311] analyzing module cnt_convert_14b
+INFO: [VRFC 10-311] analyzing module cnt_convert_7b
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/Branch_cond_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BranchCondGen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/alu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/control_unit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/hazard.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HazardUnit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/immed_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ImmedGen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/structs.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module p_structs
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_mcu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OTTER_MCU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_memory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/reg_file.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegFile
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/register_nb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_nb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OTTER_Wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/test_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_pipeline
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot test_pipeline_behav xil_defaultlib.test_pipeline xil_defaultlib.glbl -log elaborate.log"
+ECHO is off.
+ECHO is off.
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot test_pipeline_behav xil_defaultlib.test_pipeline xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3633] port 'CLK' is already connected [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv:62]
+ERROR: [VRFC 10-3633] port 'CLK' is already connected [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv:66]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
 WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_pipeline'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_pipeline' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim/otter_memory.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj test_pipeline_vlog.prj"
+ECHO is off.
+ECHO is off.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/Branch_cond_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BranchCondGen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/alu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/control_unit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/hazard.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HazardUnit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/immed_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ImmedGen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/structs.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module p_structs
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_mcu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OTTER_MCU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_memory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/reg_file.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegFile
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/register_nb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_nb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OTTER_Wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/test_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_pipeline
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot test_pipeline_behav xil_defaultlib.test_pipeline xil_defaultlib.glbl -log elaborate.log"
+ECHO is off.
+ECHO is off.
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot test_pipeline_behav xil_defaultlib.test_pipeline xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/control_unit.sv:30]
+WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/Branch_cond_gen.sv:46]
+WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/alu.sv:44]
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.structs
+Compiling module xil_defaultlib.reg_nb(n=32)
+Compiling module xil_defaultlib.Memory
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ImmedGen
+Compiling module xil_defaultlib.RegFile
+Compiling module xil_defaultlib.BranchCondGen
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.HazardUnit
+Compiling module xil_defaultlib.OTTER_MCU
+Compiling module xil_defaultlib.cnt_convert_14b
+Compiling module xil_defaultlib.cnt_convert_7b
+Compiling module xil_defaultlib.clk_divder
+Compiling module xil_defaultlib.univ_sseg
+Compiling module xil_defaultlib.clk_2n_div_test(n=17)
+Compiling module xil_defaultlib.OTTER_Wrapper
+Compiling module xil_defaultlib.test_pipeline
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_pipeline_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "test_pipeline_behav -key {Behavioral:sim_1:Functional:test_pipeline} -tclbatch {test_pipeline.tcl} -view {C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/test_pipeline_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/test_pipeline_behav.wcfg
+WARNING: Simulation object /test_pipeline/DUT/CLK_50MHz was not found in the design.
+WARNING: Simulation object /test_pipeline/DUT/PS was not found in the design.
+WARNING: Simulation object /test_pipeline/DUT/NS was not found in the design.
+source test_pipeline.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 1 us : File "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/test_pipeline.sv" Line 52
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'test_pipeline_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1747.875 ; gain = 40.559
+run 10 ms
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\test_pipeline.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_pipeline'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_pipeline' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim/otter_memory.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj test_pipeline_vlog.prj"
+ECHO is off.
+ECHO is off.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/Branch_cond_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BranchCondGen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/alu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/control_unit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/hazard.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HazardUnit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/immed_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ImmedGen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/structs.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module p_structs
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_mcu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OTTER_MCU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_memory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/reg_file.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegFile
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/register_nb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_nb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OTTER_Wrapper
+ERROR: [VRFC 10-2989] 'reset' is not declared [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv:149]
+ERROR: [VRFC 10-2989] 'reset' is not declared [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv:152]
+ERROR: [VRFC 10-2989] 'reset' is not declared [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv:157]
+ERROR: [VRFC 10-2989] 'reset' is not declared [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv:162]
+ERROR: [VRFC 10-8530] module 'OTTER_Wrapper' is ignored due to previous errors [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv:24]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_pipeline'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_pipeline' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim/otter_memory.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj test_pipeline_vlog.prj"
+ECHO is off.
+ECHO is off.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/Branch_cond_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BranchCondGen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/alu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/control_unit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/hazard.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HazardUnit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/immed_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ImmedGen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/structs.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module p_structs
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_mcu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OTTER_MCU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_memory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/reg_file.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegFile
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/register_nb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_nb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OTTER_Wrapper
+ERROR: [VRFC 10-2989] 'reset' is not declared [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv:149]
+ERROR: [VRFC 10-2989] 'reset' is not declared [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv:152]
+ERROR: [VRFC 10-2989] 'reset' is not declared [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv:157]
+ERROR: [VRFC 10-2989] 'reset' is not declared [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv:162]
+ERROR: [VRFC 10-8530] module 'OTTER_Wrapper' is ignored due to previous errors [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv:24]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.srcs/utils_1/imports/synth_1/OTTER_MCU.dcp with file C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1/OTTER_Wrapper.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Mar 14 13:39:33 2024] Launched synth_1...
+Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1/runme.log
+[Thu Mar 14 13:39:33 2024] Launched impl_1...
+Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/impl_1/runme.log
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\test_pipeline.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\test_pipeline.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\test_pipeline.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\test_pipeline.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Mar 14 13:40:11 2024] Launched synth_1...
+Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1/runme.log
+[Thu Mar 14 13:40:11 2024] Launched impl_1...
+Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/impl_1/runme.log
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_pipeline'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_pipeline' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim/otter_memory.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj test_pipeline_vlog.prj"
+ECHO is off.
+ECHO is off.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/Branch_cond_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BranchCondGen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/alu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/control_unit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/hazard.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HazardUnit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/immed_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ImmedGen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/structs.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module p_structs
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_mcu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OTTER_MCU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_memory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/reg_file.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegFile
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/register_nb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_nb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OTTER_Wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/test_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_pipeline
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot test_pipeline_behav xil_defaultlib.test_pipeline xil_defaultlib.glbl -log elaborate.log"
+ECHO is off.
+ECHO is off.
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot test_pipeline_behav xil_defaultlib.test_pipeline xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/control_unit.sv:30]
+WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/Branch_cond_gen.sv:46]
+WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/alu.sv:44]
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.structs
+Compiling module xil_defaultlib.reg_nb(n=32)
+Compiling module xil_defaultlib.Memory
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ImmedGen
+Compiling module xil_defaultlib.RegFile
+Compiling module xil_defaultlib.BranchCondGen
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.HazardUnit
+Compiling module xil_defaultlib.OTTER_MCU
+Compiling module xil_defaultlib.cnt_convert_14b
+Compiling module xil_defaultlib.cnt_convert_7b
+Compiling module xil_defaultlib.clk_divder
+Compiling module xil_defaultlib.univ_sseg
+Compiling module xil_defaultlib.clk_2n_div_test(n=17)
+Compiling module xil_defaultlib.OTTER_Wrapper
+Compiling module xil_defaultlib.test_pipeline
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_pipeline_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "test_pipeline_behav -key {Behavioral:sim_1:Functional:test_pipeline} -tclbatch {test_pipeline.tcl} -view {C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/test_pipeline_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/test_pipeline_behav.wcfg
+WARNING: Simulation object /test_pipeline/DUT/CLK_50MHz was not found in the design.
+source test_pipeline.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 1 us : File "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/test_pipeline.sv" Line 52
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'test_pipeline_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1
+
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\test_pipeline.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\test_pipeline.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Mar 14 13:40:42 2024] Launched synth_1...
+Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1/runme.log
+[Thu Mar 14 13:40:42 2024] Launched impl_1...
+Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/impl_1/OTTER_Wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\test_pipeline.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\test_pipeline.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\test_pipeline.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.srcs/utils_1/imports/synth_1/OTTER_MCU.dcp with file C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1/OTTER_Wrapper.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Mar 14 13:43:12 2024] Launched synth_1...
+Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1/runme.log
+[Thu Mar 14 13:43:12 2024] Launched impl_1...
+Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/impl_1/runme.log
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\test_pipeline.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\test_pipeline.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/impl_1/OTTER_Wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_pipeline'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_pipeline' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim/otter_memory.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj test_pipeline_vlog.prj"
+ECHO is off.
+ECHO is off.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/Branch_cond_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BranchCondGen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/alu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/control_unit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/hazard.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HazardUnit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/immed_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ImmedGen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/structs.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module p_structs
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_mcu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OTTER_MCU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_memory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/reg_file.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegFile
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/register_nb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_nb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OTTER_Wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/test_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_pipeline
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot test_pipeline_behav xil_defaultlib.test_pipeline xil_defaultlib.glbl -log elaborate.log"
+ECHO is off.
+ECHO is off.
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot test_pipeline_behav xil_defaultlib.test_pipeline xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/control_unit.sv:30]
+WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/Branch_cond_gen.sv:46]
+WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/alu.sv:44]
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.structs
+Compiling module xil_defaultlib.reg_nb(n=32)
+Compiling module xil_defaultlib.Memory
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ImmedGen
+Compiling module xil_defaultlib.RegFile
+Compiling module xil_defaultlib.BranchCondGen
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.HazardUnit
+Compiling module xil_defaultlib.OTTER_MCU
+Compiling module xil_defaultlib.cnt_convert_14b
+Compiling module xil_defaultlib.cnt_convert_7b
+Compiling module xil_defaultlib.clk_divder
+Compiling module xil_defaultlib.univ_sseg
+Compiling module xil_defaultlib.clk_2n_div_test(n=17)
+Compiling module xil_defaultlib.OTTER_Wrapper
+Compiling module xil_defaultlib.test_pipeline
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_pipeline_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "test_pipeline_behav -key {Behavioral:sim_1:Functional:test_pipeline} -tclbatch {test_pipeline.tcl} -view {C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/test_pipeline_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/test_pipeline_behav.wcfg
+WARNING: Simulation object /test_pipeline/DUT/CLK_50MHz was not found in the design.
+source test_pipeline.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 1 us : File "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/test_pipeline.sv" Line 52
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'test_pipeline_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+run 10 ms
+run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1778.660 ; gain = 29.410
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\test_pipeline.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_pipeline'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj test_pipeline_vlog.prj"
+ECHO is off.
+ECHO is off.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/Branch_cond_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BranchCondGen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/alu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/control_unit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/hazard.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HazardUnit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/immed_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ImmedGen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/structs.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module p_structs
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_mcu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OTTER_MCU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_memory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/reg_file.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegFile
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/register_nb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_nb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OTTER_Wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/test_pipeline.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_pipeline
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'test_pipeline'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot test_pipeline_behav xil_defaultlib.test_pipeline xil_defaultlib.glbl -log elaborate.log"
+ECHO is off.
+ECHO is off.
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot test_pipeline_behav xil_defaultlib.test_pipeline xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/control_unit.sv:30]
+WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/Branch_cond_gen.sv:46]
+WARNING: [VRFC 10-2649] an enum variable may only be assigned the same enum typed variable or one of its values [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/alu.sv:44]
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.structs
+Compiling module xil_defaultlib.reg_nb(n=32)
+Compiling module xil_defaultlib.Memory
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ImmedGen
+Compiling module xil_defaultlib.RegFile
+Compiling module xil_defaultlib.BranchCondGen
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.HazardUnit
+Compiling module xil_defaultlib.OTTER_MCU
+Compiling module xil_defaultlib.cnt_convert_14b
+Compiling module xil_defaultlib.cnt_convert_7b
+Compiling module xil_defaultlib.clk_divder
+Compiling module xil_defaultlib.univ_sseg
+Compiling module xil_defaultlib.clk_2n_div_test(n=17)
+Compiling module xil_defaultlib.OTTER_Wrapper
+Compiling module xil_defaultlib.test_pipeline
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot test_pipeline_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+$finish called at time : 1 us : File "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/test_pipeline.sv" Line 52
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1799.898 ; gain = 0.000
+run 10 ms
+run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1799.898 ; gain = 0.000
+run 10 ms
+run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1799.898 ; gain = 0.000
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\test_pipeline.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\test_pipeline.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'test_pipeline'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'test_pipeline' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim/otter_memory.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj test_pipeline_vlog.prj"
+ECHO is off.
+ECHO is off.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/Branch_cond_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BranchCondGen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/alu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/control_unit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/hazard.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HazardUnit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/immed_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ImmedGen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/structs.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module p_structs
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_mcu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OTTER_MCU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_memory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/reg_file.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegFile
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/register_nb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_nb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OTTER_Wrapper
+ERROR: [VRFC 10-2989] 'BUTTONS_PORT_ADDR' is not declared [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv:122]
+ERROR: [VRFC 10-8530] module 'OTTER_Wrapper' is ignored due to previous errors [C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv:24]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\testAll_Wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.srcs/utils_1/imports/synth_1/OTTER_MCU.dcp with file C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1/OTTER_Wrapper.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Mar 14 13:53:24 2024] Launched synth_1...
+Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1/runme.log
+[Thu Mar 14 13:53:24 2024] Launched impl_1...
+Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/impl_1/OTTER_Wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.srcs/utils_1/imports/synth_1/OTTER_MCU.dcp with file C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1/OTTER_Wrapper.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Mar 14 13:55:29 2024] Launched synth_1...
+Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1/runme.log
+[Thu Mar 14 13:55:30 2024] Launched impl_1...
+Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/impl_1/OTTER_Wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.srcs/utils_1/imports/synth_1/OTTER_MCU.dcp with file C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1/OTTER_Wrapper.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Mar 14 13:59:13 2024] Launched synth_1...
+Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/synth_1/runme.log
+[Thu Mar 14 13:59:13 2024] Launched impl_1...
+Run output will be captured here: C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/vivado_2023.2/vivado_2023.2.runs/impl_1/OTTER_Wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.

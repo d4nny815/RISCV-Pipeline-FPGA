@@ -70,6 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 3
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -96,7 +98,11 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_memory.sv
   C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/reg_file.sv
   C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/register_nb.sv
-  C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/otter_wrapper.sv
+  C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/testAll_Wrapper.sv
+}
+read_verilog -library xil_defaultlib {
+  C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/clk_2n_div.v
+  C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/univ_sseg.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
