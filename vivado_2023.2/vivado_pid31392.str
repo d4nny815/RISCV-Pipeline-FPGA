@@ -301,3 +301,27 @@ selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sourc
 // TclEventType: FILE_SET_CHANGE
 // Elapsed time: 44 seconds
 selectCodeEditor("otter_mcu.sv", 923, 153); // ad (otter_mcu.sv)
+// Elapsed time: 77 seconds
+selectCodeEditor("otter_mcu.sv", 937, 656); // ad (otter_mcu.sv)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "otter_wrapper.sv", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "otter_wrapper.sv", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "otter_mcu.sv", 2); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OTTER_Wrapper (otter_wrapper.sv), my_otter : OTTER_MCU (otter_mcu.sv)]", 2); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 7); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 8); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, test_pipeline (test_pipeline.sv)]", 9, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, test_pipeline (test_pipeline.sv)]", 9, true, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click - Node
+selectCodeEditor("test_pipeline.sv", 136, 722); // ad (test_pipeline.sv)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 06m:12s
+// Elapsed Time for: 'L.f': 06m:14s
+// [Engine Memory]: 1,275 MB (+603kb) [00:06:24]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 06m:16s
+// Elapsed Time for: 'L.f': 06m:18s
+// HMemoryUtils.trashcanNow. Engine heap size: 1,276 MB. GUI used memory: 87 MB. Current time: 3/13/24, 9:44:49 PM PDT
+// Elapsed time: 20 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "otter_mcu.sv", 2); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)

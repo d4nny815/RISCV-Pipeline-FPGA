@@ -134,3 +134,9 @@ remove_files  {C:/Users/D4nny/Documents/RISCV-Pipeline-FPGA/rtl/sseg_driver.v C:
 WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_wrapper.sv:]
 WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
 ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\test_pipeline.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\test_pipeline.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\D4nny\Documents\RISCV-Pipeline-FPGA\rtl\otter_mcu.sv:]
